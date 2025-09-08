@@ -1,0 +1,31 @@
+{
+  "name": "monitory-medyczne",
+  "version": "1.0.0",
+  "description": "HTML + Bootstrap + SCSS site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:sass": "sass --watch src/scss/styles.scss public/css/styles.css",
+    "build": "sass src/scss/styles.scss public/css/styles.css --style=compressed",
+    "build:sass": "sass src/scss/styles.scss public/css/styles.css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimitryIvaniuta/monitory-medyczne.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DimitryIvaniuta/monitory-medyczne/issues"
+  },
+  "homepage": "https://github.com/DimitryIvaniuta/monitory-medyczne#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.92.1"
+  }
+}
