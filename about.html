@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="pl">
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -100,7 +102,7 @@
 </section>
 
 <!-- 5) Decorative Cut-out Image -->
-<section class="position-relative py-5">
+<section class="cutout-section position-relative py-5">
     <div class="container overflow-hidden">
         <div class="mask-shape">
             <img src="./public/img/monitor-cut-shape.png" alt="Monitor" class="img-fluid">
@@ -175,58 +177,58 @@
         <h2 class="fw-bold mb-4">Referencje</h2>
 
         <!-- 4-card grid -->
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-3">
             <!-- Card 1 -->
-            <div class="col">
+            <div class="col mb-3">
                 <article class="ref-card d-flex rounded-3 shadow-sm">
                     <figure class="ref-card__media flex-shrink-0">
                         <img src="./public/img/referencje.png" alt="Referencja 1" class="img-fluid">
-                        <button class="ref-card__btn btn btn-light">
-                            <img src="./public/icons/download.svg" alt="" class="me-1">Pobierz
-                        </button>
                     </figure>
-                    <p class="ref-card__text mb-0 d-flex align-items-center">
+                    <p class="ref-card__text m-3">
                         inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                     </p>
+                    <button class="ref-card__btn btn btn-light">
+                        <img src="./public/icons/download.svg" alt="" class="me-1">Pobierz
+                    </button>
                 </article>
             </div>
-            <div class="col">
+            <div class="col mb-3">
                 <article class="ref-card d-flex rounded-3 shadow-sm">
                     <figure class="ref-card__media flex-shrink-0">
                         <img src="./public/img/referencje.png" alt="Referencja 1" class="img-fluid">
-                        <button class="ref-card__btn btn btn-light">
-                            <img src="./public/icons/download.svg" alt="" class="me-1">Pobierz
-                        </button>
                     </figure>
-                    <p class="ref-card__text mb-0 d-flex align-items-center">
+                    <p class="ref-card__text m-3">
                         inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                     </p>
+                    <button class="ref-card__btn btn btn-light">
+                        <img src="./public/icons/download.svg" alt="" class="me-1">Pobierz
+                    </button>
                 </article>
             </div>
-            <div class="col">
+            <div class="col mb-3">
                 <article class="ref-card d-flex rounded-3 shadow-sm">
                     <figure class="ref-card__media flex-shrink-0">
                         <img src="./public/img/referencje.png" alt="Referencja 1" class="img-fluid">
-                        <button class="ref-card__btn btn btn-light">
-                            <img src="./public/icons/download.svg" alt="" class="me-1">Pobierz
-                        </button>
                     </figure>
-                    <p class="ref-card__text mb-0 d-flex align-items-center">
+                    <p class="ref-card__text m-3">
                         inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                     </p>
+                    <button class="ref-card__btn btn btn-light">
+                        <img src="./public/icons/download.svg" alt="" class="me-1">Pobierz
+                    </button>
                 </article>
             </div>
-            <div class="col">
+            <div class="col mb-3">
                 <article class="ref-card d-flex rounded-3 shadow-sm">
                     <figure class="ref-card__media flex-shrink-0">
                         <img src="./public/img/referencje.png" alt="Referencja 1" class="img-fluid">
-                        <button class="ref-card__btn btn btn-light">
-                            <img src="./public/icons/download.svg" alt="" class="me-1">Pobierz
-                        </button>
                     </figure>
-                    <p class="ref-card__text mb-0 d-flex align-items-center">
+                    <p class="ref-card__text m-3">
                         inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
                     </p>
+                    <button class="ref-card__btn btn btn-light">
+                        <img src="./public/icons/download.svg" alt="" class="me-1">Pobierz
+                    </button>
                 </article>
             </div>
         </div>
@@ -234,27 +236,58 @@
 </section>
 
 
-
-
 <!-- 9) Footer -->
-<footer class="bg-dark text-light py-4">
+<footer class="site-footer py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <a href="#"><img src="public/icons/logo.svg" alt="Logo" class="mb-3"></a>
-                <ul class="list-unstyled">
-                    <li><img src="public/icons/contact-phone.svg" alt="" class="me-2">+48 650 468 569</li>
-                    <li><img src="public/icons/contact-phone.svg" alt="" class="me-2">+48 502 342 560</li>
-                    <li><img src="public/img/contact-email-red.svg" alt="" class="me-2">biuro@iqrad.pl</li>
+        <div class="row g-4">
+            <!-- 1) Contact -->
+            <div class="col-12 col-md-3">
+                <ul class="footer-contact list-unstyled mb-0">
+                    <li>
+                        <span class="icon-wrap"><img src="./public/icons/contact-phone-red.svg" alt=""></span>
+                        <a href="tel:+48660648569">+48 660 468 569</a>
+                    </li>
+                    <li>
+                        <span class="icon-wrap"><img src="./public/icons/contact-phone-red.svg" alt=""></span>
+                        <a href="tel:+48502342560">+48 502 342 560</a>
+                    </li>
+                    <li>
+                        <span class="icon-wrap"><img src="./public/icons/contact-email-red.svg" alt=""></span>
+                        <a href="mailto:biuro@iqrad.pl">biuro@iqrad.pl</a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-md-2"><h6>Menu</h6><ul class="list-unstyled"><li><a href="#">Referencje</a></li><li><a href="#">Serwis</a></li><li><a href="#">Katalogi</a></li><li><a href="#">Kontakt</a></li></ul></div>
-            <div class="col-md-3"><h6>Monitory</h6><ul class="list-unstyled"><li><a href="#">Monitory chirurgiczne</a></li><li><a href="#">Detektory</a></li></ul></div>
-            <div class="col-md-3"><h6>Prawo</h6><ul class="list-unstyled"><li><a href="#">Polityka prywatności</a></li><li><a href="#">RODO</a></li></ul></div>
+
+            <!-- 2) Menu -->
+            <div class="col-6 col-md-3 col-lg-2">
+                <ul class="footer-nav list-unstyled mb-0">
+                    <li><a href="#">Referencje</a></li>
+                    <li><a href="#">Serwis</a></li>
+                    <li><a href="#">Katalogi</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <!-- 3) Products -->
+            <div class="col-6 col-md-3 col-lg-3">
+                <ul class="footer-nav list-unstyled mb-0">
+                    <li><a href="#">Monitory chirurgiczne</a></li>
+                    <li><a href="#">Detektory</a></li>
+                    <li class="fw-bold mt-2">Baza wiedzy</li>
+                    <li><a href="#">Monitory medyczne</a></li>
+                    <li><a href="#">Detektory</a></li>
+                </ul>
+            </div>
+
+            <!-- 4) Legal -->
+            <div class="col-12 col-md-3 col-lg-2 ms-lg-auto">
+                <ul class="footer-nav list-unstyled mb-0">
+                    <li><a href="#">Polityka prywatności</a></li>
+                    <li><a href="#">RODO</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </footer>
-
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -12099,12 +12099,12 @@ a:hover {
   background: #f0ece4;
   position: relative;
   overflow: hidden;
-  /* Huge watermark “iqrad” */
+  /* Huge watermark “iorad” */
 }
 .references-section::before {
-  content: "iqrad";
+  content: "iorad";
   position: absolute;
-  top: 0;
+  top: -2rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 18rem;
@@ -12122,9 +12122,11 @@ a:hover {
   /* CARD ----------------------------------------------------------- */
 }
 .references-section .ref-card {
+  margin-inline: auto;
+  position: relative;
   background: #fff;
   border-radius: 0.75rem;
-  overflow: hidden;
+  overflow: visible;
   height: 100%;
   display: flex;
 }
@@ -12161,7 +12163,7 @@ a:hover {
   flex: 1;
   font-size: 0.95rem;
   line-height: 1.4;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 1.5rem 1.75rem;
   color: #212529;
 }
 @media (max-width: 575.98px) {
@@ -12170,15 +12172,20 @@ a:hover {
   }
 }
 .references-section .ref-card__btn {
-  padding: 0.375rem 1rem;
-  font-size: 0.85rem;
+  position: absolute;
+  right: 4rem;
+  bottom: -0.9rem;
+  padding: 0.35rem 1.1rem;
+  font-size: 0.8rem;
   border-radius: 2rem;
+  z-index: 2;
   border: 1px solid rgba(33, 37, 41, 0.15);
   display: flex;
   align-items: center;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
 }
 .references-section .ref-card__btn img {
-  width: 1rem;
+  width: 0.9rem;
 }
 .references-section .ref-card__btn:hover {
   background: #0A7DB8;
@@ -12189,33 +12196,105 @@ a:hover {
   filter: brightness(0) invert(1);
 }
 
-.footer {
-  background: #f0ece4;
-  color: #f8f9fa;
-  padding: 2rem 1rem;
+/* ─────────────── Footer ─────────────────────────── */
+.site-footer {
+  background: #2b2b2b;
+  color: #f1f1f1;
+  font-size: 0.95rem;
 }
-.footer a {
-  color: #f8f9fa;
+.site-footer a {
+  color: #f1f1f1;
+  text-decoration: none;
 }
-.footer a:hover {
-  color: #0A7DB8;
+.site-footer a:hover {
+  color: rgb(27.8453608247, 169.8170103093, 242.6546391753);
 }
-.footer img {
-  height: 1.25rem;
-  margin-bottom: 0.75rem;
+.site-footer {
+  /* red circular icon */
 }
-.footer ul {
-  list-style: none;
-  padding: 0;
+.site-footer .icon-wrap {
+  margin-right: 0.5rem;
 }
-.footer ul li {
+.site-footer {
+  /* contact list */
+}
+.site-footer .footer-contact li {
   display: flex;
   align-items: center;
+  margin-bottom: 0.75rem;
+}
+.site-footer {
+  /* generic nav list */
+}
+.site-footer .footer-nav li {
   margin-bottom: 0.5rem;
 }
-.footer ul li img {
-  width: 1rem;
-  margin-right: 0.5rem;
+.site-footer .footer-nav li.fw-bold {
+  margin-top: 1rem;
+}
+.site-footer {
+  /* spacing tweaks on mobile */
+}
+@media (max-width: 767.98px) {
+  .site-footer .footer-nav li {
+    margin-bottom: 0.35rem;
+  }
+  .site-footer .footer-contact li {
+    margin-bottom: 0.5rem;
+  }
+  .site-footer .icon-wrap {
+    margin-right: 0.5rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────── */
+/*  Decorative cut-out section with 2-line watermark              */
+/* ─────────────────────────────────────────────────────────────── */
+.cutout-section {
+  position: relative;
+  /* watermark lines */
+}
+.cutout-section::before, .cutout-section::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-size: 16rem;
+  font-weight: 700;
+  line-height: 2;
+  color: rgba(208, 201, 190, 0.25);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.cutout-section::before {
+  content: "Nasza Precyzja";
+  top: -1rem;
+}
+.cutout-section::after {
+  content: "Twoja Vizja";
+  word-spacing: 30rem;
+  top: 16rem;
+}
+.cutout-section {
+  /* scale down on tablets / phones */
+}
+@media (max-width: 991.98px) {
+  .cutout-section::before, .cutout-section::after {
+    font-size: 8rem;
+  }
+  .cutout-section::after {
+    top: 3.8rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .cutout-section::before, .cutout-section::after {
+    font-size: 4rem;
+  }
+  .cutout-section::after {
+    top: 2rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
