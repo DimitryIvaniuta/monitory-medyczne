@@ -1,0 +1,45 @@
+// Footer
+.site-footer {
+  background: #2b2b2b;
+  color: #f1f1f1;
+  font-size: .95rem;
+
+  a { color: #f1f1f1; text-decoration: none;
+    &:hover { color: lighten($primary, 15%); }
+  }
+
+  /* red circular icon */
+  .icon-wrap {
+    //display: inline-grid;
+    //place-items: center;
+    //width: 1.65rem; height: 1.65rem;
+    //border-radius: 50%;
+    //background: #d90429;
+    //margin-right: .65rem;
+    //
+    //img { width: .8rem; filter: brightness(0) invert(1); }
+    margin-right: 0.5rem;
+  }
+
+  /* contact list */
+  .footer-contact li {
+    display: flex; align-items: center;
+    margin-bottom: .75rem;
+  }
+
+  /* generic nav list */
+  .footer-nav li {
+    margin-bottom: .5rem;
+
+    &.fw-bold {          // active category (Baza wiedzy)
+      margin-top: 1rem;  // small gap above
+    }
+  }
+
+  /* spacing tweaks on mobile */
+  @media (max-width: 767.98px) {
+    .footer-nav li { margin-bottom: .35rem; }
+    .footer-contact li { margin-bottom: .5rem; }
+    .icon-wrap { margin-right: .5rem; }
+  }
+}

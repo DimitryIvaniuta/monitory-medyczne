@@ -1,80 +1,33 @@
-@import "variables";
+// src/scss/styles.scss
+// Main SCSS entry point for Monitory Medyczne project
 
-$primary:       $primary !default;
-$secondary:     $secondary !default;
-$body-bg:       $body-bg !default;
-$body-color:    $body-color !default;
-$border-radius: $border-radius !default;
+// 1) Reset and Normalize
+@import "abstracts/reset";
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+// 2) Design Tokens (variables, breakpoints, spacing)
+@import "abstracts/variables";
 
+// 3) Global Functions and Mixins
+@import "abstracts/functions";
+@import "abstracts/mixins";
 
-// 2) Global
-body {
-  font-family: $font-family-sans-serif;
-  color: $body-color;
-  background: $body-bg;
-  margin: 0;
-  line-height: 1.6;
-}
-a:hover { text-decoration: none; }
+// 4) Bootstrap Core (uses overridden variables)
+@import "vendors/bootstrap";
 
-@import "components";
+// 5) Base Styles (typography, base elements)
+@import "base/base";
 
-// 8) Quote
-.quote-section {
-  background: $body-bg;
-  padding: 2rem 1rem;
-  h3 {
-    font-size: 1.5rem; font-weight: 700;
-    @media (min-width: 768px) { font-size: 2rem; }
-  }
-}
+// 6) Component Styles (shared UI components)
+@import "components/navbar";
+@import "components/footer";
+@import "components/cards";
 
-// 9) Dual info blocks
-.dual-blocks {
-  padding: 2rem 1rem;
+// 7) Page Styles (specific page layouts)
+@import "pages/about";
+@import "pages/kontakt";
 
-  .row {
-    align-items: start !important;
-    margin-bottom: 2rem;
-    &.reverse { flex-direction: column-reverse; }
-    @media (min-width: 768px) {
-      &.reverse { flex-direction: row-reverse; }
-    }
-  }
+// 8) Theme Overrides (utility classes, code block, container)
+@import "themes/default";
 
-  img {
-    width: 100%; border-radius: $border-radius;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.05);
-  }
-  h5 { font-weight: 600; margin-bottom: .75rem; }
-  p { color: $secondary; font-size: .9rem; }
-
-  // small label (uppercase feel, muted)
-  .dual-label {
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  // main title
-  .dual-title {
-    font-size: 1.75rem;
-    line-height: 1.2;
-    @media (min-width: 768px) {
-      font-size: 2rem;
-    }
-    @media (min-width: 992px) {
-      font-size: 2.25rem;
-    }
-  }
-
-  // body text
-  .dual-text {
-    font-size: 1rem;
-    line-height: 1.5;
-    max-width: 36rem; // limit line length for readability
-  }
-}
-
+// 9) Utility Helpers (if any additional utilities)
+// @import "utilities/helpers"; // future utilities

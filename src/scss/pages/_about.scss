@@ -1,0 +1,317 @@
+// Page-specific styles for "O nas" (About) page
+
+// 1) Hero banner adjustments
+
+// 1) Hero / Welcome section
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  background: url('../img/hero-bg.png') center/cover no-repeat;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-content {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    padding: 2rem 1rem;
+    top: 12%;      // pulls it up (adjust % as needed)
+    left: 15%;     // shifts it left (adjust % as needed)
+    max-width: 40%; // limit width so text wraps nicely
+
+    h1 {
+      font-size: 2.5rem;
+      @media (min-width: $break-md) { font-size: 3rem; }
+      @media (min-width: $break-lg) { font-size: 3.75rem; }
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    p.lead {
+      font-size: 1.125rem;
+      @media (min-width: $break-md) { font-size: 1.25rem; }
+      margin-bottom: 2rem;
+    }
+
+    .btn-hero {
+      @extend .btn-primary;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      border-radius: $border-radius;
+    }
+  }
+}
+
+// 2) Intro text section
+.intro-section {
+  background-color: $body-bg;
+  // Section top/bottom padding to match your design
+  padding: 6rem 0;    // 6rem top & bottom
+
+  h2 {
+    font-size: 2rem;    // exactly 40px
+    line-height: 1.2;
+    font-weight: 700;     // bold
+    margin-bottom: 4rem;  // exactly 64px
+    @media (min-width: $break-md) { font-size: 2.75rem; }
+    @media (min-width: $break-lg) { font-size: 3.5rem; }
+  }
+  h5 {
+    // The “Przenieś swój…” sub‐heading
+    font-size: 1.75rem;   // exactly 28px
+    line-height: 1.3;
+    font-weight: 600;     // semibold
+    margin-bottom: 2rem;// exactly 24px
+  }
+  .row {
+    // We only want our right‐hand column
+    justify-content: flex-end;
+  }
+
+  p {
+    color: $body-color;
+    font-size: 1rem;
+    @media (min-width: $break-md) { font-size: 1.1rem; }
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 34rem;
+  }
+}
+
+// 3) Features row
+.features-section {
+  padding: 4rem 0;
+
+  .row {
+    gap: 2rem;            // exactly 32px between items
+  }
+  .col-sm-3 {
+    // Ensure the three icons are evenly spaced at 25% width
+    flex: 0 0 25%;
+    max-width: 25%;
+
+    // Icon
+    img {
+      width: 3rem;        // exactly 48px
+      height: 3rem;
+      margin-bottom: 1rem;// 16px
+    }
+
+    // Title
+    h5 {
+      font-size: 1.25rem; // exactly 20px
+      font-weight: 600;   // semibold
+      margin-bottom: 1rem;// exactly 16px
+    }
+
+    // Body copy
+    p {
+      font-size: 0.875rem; // exactly 14px
+      line-height: 1.5;
+      color: $secondary;
+      margin: 0 auto;      // center text block
+      max-width: 12rem;    // limit line length to ~224px
+    }
+  }
+  .col-sm-4 {
+    text-align: center;
+
+    img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1rem;
+      @media (min-width: $break-md) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    h5 {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      @media (min-width: $break-md) { font-size: 1.25rem; }
+    }
+
+    p {
+      color: $secondary;
+      font-size: 0.9rem;
+      @media (min-width: $break-md) { font-size: 1rem; }
+    }
+  }
+  // Offsets for the middle/right columns on lg+ (to mirror your artboard)
+  @media (min-width: $break-lg) {
+    .col-sm-3:nth-child(2),
+    .col-sm-3:nth-child(3) {
+      margin-left: 4.166667%; // 1/24 of container (~16px on 1200px container)
+    }
+  }
+}
+
+// 4) Decorative cut-out section
+.mask-shape {
+  overflow: hidden;
+  //mask: url('../img/shape-cutout.svg') no-repeat center/contain;
+  //-webkit-mask: url('../img/shape-cutout.svg') no-repeat center/contain;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// 5) Quote / callout
+.quote-section {
+  background-color: $body-bg;
+  padding: 4rem 1rem;
+
+  h3 {
+    font-size: 1.75rem;
+    @media (min-width: $break-md) { font-size: 2rem; }
+    @media (min-width: $break-lg) { font-size: 2.25rem; }
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+}
+
+// 6) Dual info blocks
+.dual-blocks {
+  padding: 4rem 1rem;
+
+  .row {
+    align-items: center;
+    margin-bottom: 3rem;
+
+    &.reverse {
+      flex-direction: column-reverse;
+      @media (min-width: $break-md) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    border-radius: $border-radius;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+  }
+
+  .dual-title {
+    font-size: 1.5rem;
+    @media (min-width: $break-md) { font-size: 1.75rem; }
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .dual-text {
+    font-size: 1rem;
+    color: $secondary;
+    line-height: 1.5;
+  }
+}
+
+// 7) References grid
+.references-section {
+  position: relative;
+  overflow: hidden;
+  background-color: $body-bg;
+  padding: 4rem 1rem;
+
+  /* Huge watermark “iorad” */
+  &::before {
+    content: "iorad";
+    position: absolute;
+    top: -2rem; left: 50%;
+    transform: translateX(-50%);
+    font-size: 18rem;
+    font-weight: 700;
+    color: rgba(#d0c9be, .35);            // subtle tint
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    border: none;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
+
+    .card-body p {
+      font-size: 0.95rem;
+      color: $secondary;
+      line-height: 1.4;
+    }
+
+    .card-footer {
+      background: transparent;
+      border-top: none;
+      text-align: center;
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+}
+
+//Decorative cut-out section with 2-line watermark
+.cutout-section {
+  position: relative;
+
+  /* watermark lines */
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 16rem;          // desktop size
+    font-weight: 700;
+    line-height: 2;         // tighten vertical gap
+    color: rgba(#d0c9be, 0.25);// light beige tint
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &::before {
+    content: "Nasza Precyzja";
+    top: -1rem;                    // first line
+  }
+
+  &::after  {
+    content: "Twoja Vizja";
+    word-spacing: 30rem;
+    top: 16rem;               // second line (≈ font-size × line-height)
+  }
+
+  /* scale down on tablets / phones */
+  @media (max-width: 991.98px) {
+    &::before, &::after { font-size: 8rem; }
+    &::after  { top: 3.8rem; }
+  }
+  @media (max-width: 575.98px) {
+    &::before, &::after { font-size: 4rem; }
+    &::after  { top: 2rem; }
+  }
+}

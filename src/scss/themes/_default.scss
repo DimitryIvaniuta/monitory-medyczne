@@ -1,0 +1,40 @@
+// src/scss/themes/_default.scss
+// Default theme overrides (light mode) for Monitory Medyczne
+
+// Color palette overrides (using design tokens)
+$bs-body-bg:      $body-bg;
+$bs-body-color:   $body-color;
+$bs-primary:      $primary;
+$bs-secondary:    $secondary;
+$bs-success:      $success;
+$bs-danger:       $danger;
+
+// Link colors
+a {
+  color: $primary;
+  &:hover, &:focus {
+    color: emphasize($primary, 10%);
+  }
+}
+
+// Button default styles (ensure consistent rounding)
+.btn {
+  border-radius: $border-radius;
+}
+
+// Utility classes
+.text-primary { color: $primary !important; }
+.text-secondary { color: $secondary !important; }
+.bg-primary { background-color: $primary !important; }
+.bg-secondary { background-color: $secondary !important; }
+
+// Code block styling if used
+pre, code {
+  font-family: $font-family-monospace;
+  background: lighten($body-bg, 5%);
+  padding: 0.25rem 0.5rem;
+  border-radius: $border-radius;
+}
+
+// Theme-specific container
+.container { max-width: 1200px; }

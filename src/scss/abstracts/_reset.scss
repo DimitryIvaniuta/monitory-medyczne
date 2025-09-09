@@ -1,0 +1,61 @@
+// src/scss/abstracts/_reset.scss
+// Minimal CSS reset to normalize default browser styling
+
+/* Box sizing reset */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Remove default margin */
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol */
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set images to block and max-width */
+img, picture, svg, video, canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove default form element spacing */
+button, input, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Remove link underline */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Root element resets */
+body {
+  line-height: 1.6;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Make tables collapse */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* HTML5 display reset for older browsers */
+article, aside, footer, header, nav, section, main {
+  display: block;
+}

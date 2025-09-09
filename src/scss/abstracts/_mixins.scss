@@ -1,0 +1,59 @@
+// src/scss/abstracts/_mixins.scss
+// Reusable Sass mixins for Monitory Medyczne project
+
+/// Responsive font-size mixin
+/// @param {String} $property - CSS property name (e.g., font-size, margin)
+/// @param {Number|String} $base - value for < breakpoint $break-sm
+/// @param {Number|String} $sm - value for >= $break-sm
+/// @param {Number|String} $md - value for >= $break-md
+/// @param {Number|String} $lg - value for >= $break-lg
+@mixin respond($property, $base, $sm: null, $md: null, $lg: null, $xl: null) {
+  #{$property}: $base;
+  @if $sm { @media (min-width: $break-sm) { #{$property}: $sm; }}
+  @if $md { @media (min-width: $break-md) { #{$property}: $md; }}
+  @if $lg { @media (min-width: $break-lg) { #{$property}: $lg; }}
+  @if $xl { @media (min-width: $break-xl) { #{$property}: $xl; }}
+}
+
+/// Center an element with flexbox
+/// @param {String} $dir - flex-direction (row or column)
+@mixin flex-center($dir: row) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+  align-items: center;
+}
+
+/// Clearfix utility
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/// Truncate text with ellipsis
+/// @param {Number} $lines - number of lines to show before truncation
+@mixin truncate($lines: 1) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+/// Aspect ratio box
+/// @param {Number} $ratio - height/width ratio (e.g., 0.75 for 3:4)
+@mixin aspect-ratio($ratio) {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: ($ratio * 100%);
+  }
+  > * {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+}

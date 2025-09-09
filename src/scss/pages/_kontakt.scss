@@ -1,0 +1,132 @@
+// src/scss/pages/_kontakt.scss
+// Page-specific styles for "Kontakt" page
+
+// 1) Breadcrumb
+.kontakt-breadcrumb {
+  font-size: .875rem;
+  color: $secondary;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+// 2) Page header (badge + title)
+.kontakt-header {
+  .badge {
+    background-color: $danger;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .75rem;
+    padding: .25rem .75rem;
+    border-radius: 10rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+    @media (max-width: $break-md) {
+      font-size: 2rem;
+    }
+  }
+}
+
+// 3) Contact info block
+.kontakt-info {
+  p,
+  h5,
+  address {
+    margin: 0;
+    color: $body-color;
+  }
+  h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  address {
+    font-style: normal;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  .btn-contact {
+    display: flex;
+    align-items: center;
+    font-size: .95rem;
+    padding: .5rem 1rem;
+    border-radius: $border-radius;
+    text-decoration: none;
+
+    &.btn-phone {
+      background-color: $danger;
+      color: #fff;
+      border: none;
+      &:hover { background-color: darken($danger, 5%); }
+    }
+    &.btn-email {
+      background-color: #fff;
+      color: $body-color;
+      border: 1px solid rgba($body-color, .15);
+      &:hover { background-color: lighten($body-bg, 5%); }
+    }
+    img {
+      width: 1rem;
+      margin-right: .5rem;
+    }
+  }
+}
+
+// 4) Kontakt form styles
+.kontakt-form {
+  .form-label {
+    font-size: .875rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+  .form-control {
+    border-radius: $border-radius;
+    padding: .75rem 1rem;
+    &::placeholder {
+      color: rgba($secondary, .7);
+    }
+  }
+  textarea.form-control {
+    resize: vertical;
+    min-height: 10rem;
+  }
+  .btn-submit {
+    margin-top: 1rem;
+    background-color: $danger;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    padding: .75rem 2rem;
+    border-radius: 2rem;
+    &:hover { background-color: darken($danger, 5%); }
+  }
+  .form-note {
+    display: flex;
+    align-items: center;
+    font-size: .75rem;
+    color: $secondary;
+    margin-top: 1rem;
+    img {
+      width: .75rem;
+      margin-right: .5rem;
+    }
+    p {
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+}
+
+// 5) Responsive adjustments
+@media (max-width: $break-md) {
+  .kontakt-info .btn-contact {
+    justify-content: center;
+  }
+  .kontakt-form .row > [class*="col-"] {
+    margin-bottom: 1rem;
+  }
+}

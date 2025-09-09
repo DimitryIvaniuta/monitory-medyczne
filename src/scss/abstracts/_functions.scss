@@ -1,0 +1,49 @@
+// src/scss/abstracts/_functions.scss
+// Sass functions for Monitory Medyczne project
+
+/// Convert px to rem based on root font-size (16px default)
+/// @param {Number} $px - pixel value to convert
+/// @param {Number} $base - base font-size in px (default: 16)
+/// @return {String} rem value
+@function to-rem($px, $base: 16) {
+  @return (#{$px / $base} * 1rem);
+}
+
+/// Generate RGBA color from hex + alpha
+/// @param {Color} $color - base hex color
+/// @param {Number} $alpha - opacity value (0-1)
+/// @return {Color} rgba color
+@function hex-alpha($color, $alpha) {
+  @return rgba(
+                  red($color),
+                  green($color),
+                  blue($color),
+                  $alpha
+  );
+}
+
+/// Emphasize a color by lightening or darkening based on luminance
+/// @param {Color} $color - base color
+/// @param {Number} $amount - percentage to lighten (>0) or darken (<0)
+/// @return {Color} adjusted color
+@function emphasize($color, $amount: 10%) {
+  @if (lightness($color) > 50%) {
+    @return darken($color, $amount);
+  } @else {
+    @return lighten($color, $amount);
+  }
+}
+
+/// Calculate fluid font-size between two viewport sizes
+/// @param {Number} $min-size - minimum font-size in px
+/// @param {Number} $max-size - maximum font-size in px
+/// @param {Number} $min-vw - minimum viewport width in px
+/// @param {Number} $max-vw - maximum viewport width in px
+/// @return {String} calc() CSS expression
+@function fluid-font($min-size, $max-size, $min-vw: 320, $max-vw: 1200) {
+  $slope: ($max-size - $min-size) / ($max-vw - $min-vw);
+  $base: $min-size - $slope * $min-vw;
+  @return unquote(
+                  "calc(#{$base}px + #{$slope * 100}vw)"
+  );
+}
