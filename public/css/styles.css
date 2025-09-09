@@ -12065,52 +12065,71 @@ label {
 }
 
 .site-footer {
-  background: #2b2b2b;
-  color: #f1f1f1;
-  font-size: 0.95rem;
+  background-color: #222;
+  color: #aaa;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+.site-footer .footer-nav.nav-col:last-child {
+  /* pull it 1rem (16px) left */
+  margin-left: -10rem;
 }
 .site-footer a {
-  color: #f1f1f1;
+  color: #aaa;
   text-decoration: none;
+  transition: color 0.2s;
 }
 .site-footer a:hover {
-  color: rgb(27.8453608247, 169.8170103093, 242.6546391753);
+  color: #fff;
 }
-.site-footer {
-  /* red circular icon */
-}
-.site-footer .icon-wrap {
-  margin-right: 0.5rem;
-}
-.site-footer {
-  /* contact list */
+.site-footer .footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0 2rem 0 0;
 }
 .site-footer .footer-contact li {
   display: flex;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
-.site-footer {
-  /* generic nav list */
+.site-footer .footer-contact li img {
+  width: 1.5rem;
+  margin-right: 0.75rem;
+}
+.site-footer .footer-contact li a {
+  color: #fff;
+  font-weight: 500;
+}
+.site-footer .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.site-footer .footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-footer .footer-nav.nav-col {
+  margin-right: 0;
+}
+.site-footer .footer-nav.nav-col:last-child {
+  margin-right: 0;
 }
 .site-footer .footer-nav li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
-.site-footer .footer-nav li.fw-bold {
-  margin-top: 1rem;
+.site-footer .footer-nav li.fw-bold a {
+  color: #fff;
 }
-.site-footer {
-  /* spacing tweaks on mobile */
-}
-@media (max-width: 767.98px) {
-  .site-footer .footer-nav li {
-    margin-bottom: 0.35rem;
+@media (max-width: 768px) {
+  .site-footer .footer-row {
+    flex-direction: column;
   }
-  .site-footer .footer-contact li {
-    margin-bottom: 0.5rem;
-  }
-  .site-footer .icon-wrap {
-    margin-right: 0.5rem;
+  .site-footer .footer-contact,
+  .site-footer .footer-nav.nav-col {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
   }
 }
 
