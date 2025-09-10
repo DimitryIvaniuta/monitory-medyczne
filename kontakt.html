@@ -1,111 +1,198 @@
 <!doctype html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kontakt — Monitory medyczne</title>
-    <link rel="stylesheet" href="public/css/styles.css" />
+    <link rel="stylesheet" href="public/css/styles.css">
 </head>
-<body class="bg-light">
+<body>
 
-<!-- Navbar (reuse your existing navbar markup) -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-    <div class="container-fluid px-5">
-        <a class="navbar-brand me-auto" href="#"><img src="public/icons/logo.svg" alt="Logo"></a>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
-        <div id="nav" class="collapse navbar-collapse justify-content-center">
-            <ul class="navbar-nav">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <div class="container-fluid">
+        <!-- 1) Logo flush left -->
+        <a class="navbar-brand me-auto" href="#">
+            <img src="./public/icons/logo.svg" alt="Logo">
+        </a>
+
+        <!-- toggler stays -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 2) Centered menu -->
+        <div id="mainNav" class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav align-items-center">
                 <li class="nav-item"><a class="nav-link" href="#">O nas</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Oferta</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Katalogi</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Serwis</a></li>
-                <li class="nav-item"><a class="nav-link active" href="#">Kontakt</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Kontakt</a></li>
             </ul>
         </div>
-        <a class="d-flex align-items-center btn btn-outline-primary ms-auto" href="tel:+48660468569">
-            <img src="public/icons/contact-phone.svg" class="me-2" alt="">+48 660 468 569
-        </a>
+
+        <!-- 3) Phone flush right -->
+        <div class="d-flex align-items-center ms-auto">
+            <a
+                    class="btn d-inline-flex align-items-center flex-nowrap"
+                    href="tel:+486506468569"
+            >
+                <img src="./public/icons/contact-phone.svg" alt="" class="me-1">
+                +48 650 468 569
+            </a>
+        </div>
     </div>
 </nav>
 
-<!-- Breadcrumb -->
-<div class="container-fluid px-5 mt-3">
-    <small class="text-secondary">Strona główna › Kontakt</small>
-</div>
 
-<!-- Header Tagline -->
-<section class="container-fluid px-5 mt-2 mb-5">
-    <span class="badge bg-danger text-uppercase fs-7">Kontakt</span>
-    <h1 class="display-5 fw-bold mt-2">Kontakt</h1>
-</section>
 
-<div class="container px-5 mb-5">
-    <div class="row gy-5">
-        <!-- Left column: Company info -->
-        <div class="col-lg-5">
-            <p class="fw-semibold mb-1">iQrad Sp. z o.o.</p>
-            <h5 class="mb-3">Generalny Dystrybutor LG Medical Solutions w Polsce</h5>
-            <address class="mb-4">
+<!-- Main Content -->
+<div class="container px-5 mb-5 pt-3">
+    <div class="row gy-5 flex-lg-nowrap">
+
+        <!-- Sidebar: Company Info -->
+        <aside class="col-lg-5 offset-lg-1 pe-lg-5 kontakt-sidebar">
+            <!-- Breadcrumb -->
+            <p class="container-fluid px-0 pb-2">
+                <small class="kontakt-breadcrumb">Strona główna › Kontakt</small>
+            </p>
+
+            <!-- Page Header -->
+            <section class="container-fluid px-0 pt-3 pb-2 kontakt-header">
+                <span class="badge bg-danger text-uppercase">Kontakt</span>
+                <h1 class="display-5 fw-bold">Kontakt</h1>
+            </section>
+
+            <p class="company-name">iQrad Sp. z o.o.</p>
+            <h5 class="company-title">Generalny Dystrybutor<br/>LG Medical Solutions w Polsce</h5>
+            <address>
                 ul. Zdrojowa 220/3/109<br>
                 43-300 Bielsko-Biała
             </address>
-            <div class="d-flex flex-column gap-3">
-                <a class="btn btn-danger d-flex align-items-center" href="tel:+48660468569">
-                    <img src="public/icons/contact-phone-red.svg" class="me-2" alt="">+48 660 468 569
+
+            <div class="contact-buttons">
+                <a href="tel:+48660468569" class="btn btn-danger d-flex">
+                    <img src="public/icons/contact-phone-red.svg" alt="Telefon">+48 660 468 569
                 </a>
-                <a class="btn btn-danger d-flex align-items-center" href="tel:+48502342560">
-                    <img src="public/icons/contact-phone-red.svg" class="me-2" alt="">+48 502 342 560
-                </a>
-                <a class="btn btn-light d-flex align-items-center text-body" href="mailto:biuro@iqrad.pl">
-                    <img src="public/icons/contact-email.svg" class="me-2" alt="">biuro@iqrad.pl
+                <a href="tel:+48502342560">
+                    <img src="public/icons/contact-phone-red.svg" alt="Telefon">+48 502 342 560
                 </a>
             </div>
-        </div>
 
-        <!-- Right column: Contact form -->
-        <div class="col-lg-7">
-            <h5 class="fw-semibold mb-4">Masz pytanie? Wyślij nam wiadomość</h5>
+            <a class="email-button" href="mailto:biuro@iqrad.pl">
+                <span>@</span> biuro@iqrad.pl
+            </a>
+        </aside>
+
+        <!-- Contact Form -->
+
+        <section class="col-lg-6 mt-lg-5 pt-lg-5 kontakt-form">
+            <div class="mt-lg-5"></div>
+            <h5 >Masz pytanie?<br/>Wyślij nam wiadomość</h5>
             <form>
+                <!-- Row 1 -->
                 <div class="row g-3 mb-3">
                     <div class="col-md-6">
-                        <label class="form-label small">Imię i nazwisko</label>
-                        <input type="text" class="form-control form-control-lg" placeholder="Adam Nowak">
+                        <label class="form-label small ps-3">Imię i nazwisko</label>
+                        <input type="text" class="form-control form-control-lg bg-white" placeholder="Adam Nowak">
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label small">Nazwa firmy</label>
-                        <input type="text" class="form-control form-control-lg" placeholder="Twoja Firma sp. z o.o.">
+                        <label class="form-label small ps-3">Nazwa firmy</label>
+                        <input type="text" class="form-control form-control-lg bg-white" placeholder="Twoja Firma sp. z o.o.">
                     </div>
                 </div>
+                <!-- Row 2 -->
                 <div class="row g-3 mb-3">
                     <div class="col-md-6">
-                        <label class="form-label small">Adres email</label>
-                        <input type="email" class="form-control form-control-lg" placeholder="adres@adres.pl">
+                        <label class="form-label small ps-3">Adres email</label>
+                        <input type="email" class="form-control form-control-lg bg-white" placeholder="adres@adres.pl">
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label small">Telefon</label>
-                        <input type="tel" class="form-control form-control-lg" placeholder="+48 600 000 000">
+                        <label class="form-label small ps-3">Telefon</label>
+                        <input type="tel" class="form-control form-control-lg bg-white" placeholder="+48 600 000 000">
                     </div>
                 </div>
+                <!-- Message -->
                 <div class="mb-3">
-                    <label class="form-label small">Wiadomość</label>
-                    <textarea class="form-control form-control-lg" rows="6" placeholder="Treść wiadomości…"></textarea>
+                    <label class="form-label small ps-3">Wiadomość</label>
+                    <textarea class="form-control form-control-lg bg-white" rows="6" placeholder="Treść wiadomości…"></textarea>
                 </div>
-                <button type="submit" class="btn btn-danger btn-lg mt-2">Wyślij wiadomość</button>
-                <p class="mt-3 text-secondary small">
-                    <img src="public/icons/download.svg" class="me-1" style="width:.9rem">
-                    inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia…
-                </p>
+                <!-- Disclaimer + Submit row -->
+                <div class="d-flex flex-column align-items-start mt-4 px-3 px-lg-0">
+                    <!-- Disclaimer -->
+                    <label class="disclaimer d-flex align-items-start mb-3">
+                        <!-- 1) input first -->
+                        <input type="checkbox" class="visually-hidden" />
+                        <!-- 2) icon span -->
+                        <span class="disclaimer__icon me-2"></span>
+                        <!-- 3) text -->
+                        <span class="disclaimer__text small text-secondary">
+                            inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                            sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                        </span>
+                    </label>
+
+                    <!-- Submit button (now always below) -->
+                    <button type="submit" class="btn btn-danger d-flex">
+                        Wyślij wiadomość
+                    </button>
+                </div>
             </form>
-        </div>
+        </section>
+
     </div>
 </div>
 
-<!-- Footer (reuse your existing footer) -->
+<!-- Footer -->
+
+<!-- 9) Footer -->
 <footer class="site-footer">
-    …
+    <div class="container">
+        <div class="footer-row">
+            <!-- Contact column -->
+            <ul class="footer-contact">
+                <li>&nbsp;</li>
+                <li>
+                    <img src="./public/icons/contact-phone-red.svg" alt="">
+                    <a href="tel:+48660468569">+48 660 468 569</a>
+                </li>
+                <li>
+                    <img src="./public/icons/contact-phone-red.svg" alt="">
+                    <a href="tel:+48502342560">+48 502 342 560</a>
+                </li>
+                <li>
+                    <img src="./public/icons/contact-email-red.svg" alt="">
+                    <a href="mailto:biuro@iqrad.pl">biuro@iqrad.pl</a>
+                </li>
+            </ul>
+
+            <!-- Navigation columns -->
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Referencje</a></li>
+                <li><a href="#">Serwis</a></li>
+                <li><a href="#">Katalogi</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Monitory chirurgiczne</a></li>
+                <li><a href="#">Detektory</a></li>
+                <li>&nbsp;</li>
+                <li class="fw-bold"><a href="#">Baza wiedzy</a></li>
+                <li><a href="#">Monitory medyczne</a></li>
+                <li><a href="#">Detektory</a></li>
+            </ul>
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Polityka prywatności</a></li>
+                <li><a href="#">Rodo</a></li>
+            </ul>
+        </div>
+    </div>
 </footer>
 
-<script src="./public/js/bootstrap.bundle.min.js"></script>
+<script src="public/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

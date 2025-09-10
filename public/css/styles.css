@@ -12507,7 +12507,7 @@ label {
   /* Huge watermark “iorad” */
 }
 .references-section::before {
-  content: "iorad";
+  content: "iQrad";
   position: absolute;
   top: -2rem;
   left: 50%;
@@ -12597,16 +12597,12 @@ label {
   font-size: 0.875rem;
   color: #504E4C;
   margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .kontakt-header .badge {
-  background-color: #E11D48;
-  color: #fff;
-  text-transform: uppercase;
+  background-color: #0A7DB8;
   font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
-  border-radius: 10rem;
 }
 .kontakt-header h1, .kontakt-header .h1 {
   font-size: 2.5rem;
@@ -12614,111 +12610,152 @@ label {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .kontakt-header h1, .kontakt-header .h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
-.kontakt-info p,
-.kontakt-info h5,
-.kontakt-info .h5,
-.kontakt-info address {
-  margin: 0;
-  color: #212529;
-}
-.kontakt-info h5, .kontakt-info .h5 {
-  font-size: 1.25rem;
+.kontakt-sidebar p.company-name {
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
+}
+.kontakt-sidebar h5.company-title, .kontakt-sidebar .company-title.h5 {
+  font-size: 1.25rem;
+  font-weight: 700;
   line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
-.kontakt-info address {
+.kontakt-sidebar address {
   font-style: normal;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #212529;
   margin-bottom: 2rem;
-  line-height: 1.5;
 }
-.kontakt-info .btn-contact {
+.kontakt-sidebar a.email-button {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.kontakt-sidebar a.email-button span {
+  font-size: 1.25rem;
+}
+.kontakt-sidebar .contact-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.kontakt-sidebar .contact-buttons a {
+  flex: 1;
   display: flex;
   align-items: center;
-  font-size: 0.95rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-}
-.kontakt-info .btn-contact.btn-phone {
+  justify-content: center;
   background-color: #E11D48;
   color: #fff;
   border: none;
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  border-radius: 1.5rem;
 }
-.kontakt-info .btn-contact.btn-phone:hover {
-  background-color: rgb(202.4114173228, 26.0885826772, 64.7716535433);
+.kontakt-sidebar .contact-buttons a span {
+  font-size: 3rem;
 }
-.kontakt-info .btn-contact.btn-email {
+.kontakt-sidebar .contact-buttons a:hover {
+  background-color: rgb(228.6830708661, 50.8169291339, 89.8385826772);
+}
+.kontakt-sidebar .email-button {
+  display: block;
+  width: 100%;
   background-color: #fff;
   color: #212529;
   border: 1px solid rgba(33, 37, 41, 0.15);
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  border-radius: 1.5rem;
 }
-.kontakt-info .btn-contact.btn-email:hover {
-  background-color: rgb(249.1071428571, 247.5357142857, 244.3928571429);
-}
-.kontakt-info .btn-contact img {
+.kontakt-sidebar .email-button img {
   width: 1rem;
   margin-right: 0.5rem;
 }
+.kontakt-sidebar .email-button:hover {
+  background-color: rgb(249.1071428571, 247.5357142857, 244.3928571429);
+}
 
-.kontakt-form .form-label {
-  font-size: 0.875rem;
+.kontakt-form h5, .kontakt-form .h5 {
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
-.kontakt-form .form-control {
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
+.kontakt-form {
+  padding-top: 1rem;
 }
-.kontakt-form .form-control::placeholder {
-  color: rgba(80, 78, 76, 0.7);
+@media (min-width: 992px) {
+  .kontakt-form {
+    margin-top: 5rem;
+    padding-top: 0;
+  }
 }
-.kontakt-form textarea.form-control {
-  resize: vertical;
-  min-height: 10rem;
+.kontakt-form .disclaimer {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0;
 }
-.kontakt-form .btn-submit {
-  margin-top: 1rem;
+.kontakt-form .disclaimer input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.kontakt-form .disclaimer__icon {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.25rem;
+  background-color: #E11D48;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-size: 0.6rem 0.6rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.2s;
+}
+input + .kontakt-form .disclaimer__icon {
+  background-image: url("public/icons/check.svg");
+}
+input:checked + .kontakt-form .disclaimer__icon {
+  background-image: url("public/icons/check.svg");
+}
+.kontakt-form .disclaimer__text {
+  line-height: 1.4;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #898682;
+}
+.kontakt-form button[type=submit] {
+  align-self: flex-start;
+  border-radius: 1.5rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #E11D48;
   color: #fff;
   border: none;
-  font-size: 1rem;
-  padding: 0.75rem 2rem;
-  border-radius: 2rem;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.25rem;
 }
-.kontakt-form .btn-submit:hover {
-  background-color: rgb(202.4114173228, 26.0885826772, 64.7716535433);
+@media (min-width: 992px) {
+  .kontakt-form button[type=submit] {
+    align-self: flex-end;
+  }
 }
-.kontakt-form .form-note {
-  display: flex;
-  align-items: center;
-  font-size: 0.75rem;
-  color: #504E4C;
-  margin-top: 1rem;
-}
-.kontakt-form .form-note img {
-  width: 0.75rem;
-  margin-right: 0.5rem;
-}
-.kontakt-form .form-note p {
-  margin: 0;
-  line-height: 1.4;
+@media (min-width: 992px) {
+  .kontakt-form .btn-danger {
+    margin-left: auto;
+  }
 }
 
-@media (max-width: 768px) {
-  .kontakt-info .btn-contact {
-    justify-content: center;
-  }
-  .kontakt-form .row > [class*=col-] {
-    margin-bottom: 1rem;
-  }
-}
 a {
   color: #0A7DB8;
 }

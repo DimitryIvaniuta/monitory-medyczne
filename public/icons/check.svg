@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <!-- Red circular background -->
+    <circle cx="12" cy="12" r="12" fill="#E21E26"/>
+    <!-- White checkmark -->
+    <path
+            d="M8.471 18.235L3.868 13.632a1.01 1.01 0 0 1 0-1.434l.803-.803a1.01 1.01 0 0 1 1.434 0l2.487 2.488L17.19 4.61a1.01 1.01 0 0 1 1.434 0l.803.803a1.01 1.01 0 0 1 0 1.434L10.529 18.235a1.01 1.01 0 0 1-1.434 0z"
+            fill="#fff"
+            fill-rule="nonzero"
+    />
+</svg>

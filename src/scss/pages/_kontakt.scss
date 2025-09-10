@@ -1,132 +1,187 @@
 // src/scss/pages/_kontakt.scss
 // Page-specific styles for "Kontakt" page
 
-// 1) Breadcrumb
+// Breadcrumb
 .kontakt-breadcrumb {
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: $secondary;
   margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
-// 2) Page header (badge + title)
+// Header badge + title
 .kontakt-header {
   .badge {
-    background-color: $danger;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: .75rem;
-    padding: .25rem .75rem;
-    border-radius: 10rem;
+    background-color: $primary;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
   }
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     margin-bottom: 2rem;
-    @media (max-width: $break-md) {
-      font-size: 2rem;
+    @media (min-width: $break-md) {
+      font-size: 3rem;
     }
   }
 }
 
-// 3) Contact info block
-.kontakt-info {
-  p,
-  h5,
-  address {
-    margin: 0;
-    color: $body-color;
-  }
-  h5 {
-    font-size: 1.25rem;
+// Sidebar (left column)
+.kontakt-sidebar {
+  p.company-name {
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  h5.company-title {
+    font-size: 1.25rem;
+    font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 1.5rem;
   }
   address {
     font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: $body-color;
     margin-bottom: 2rem;
-    line-height: 1.5;
   }
-  .btn-contact {
+  a.email-button {
+    font-size: 1rem;
+    font-weight: 700;
+    span {
+      font-size: 1.25rem;
+    }
+  }
+  .contact-buttons {
     display: flex;
-    align-items: center;
-    font-size: .95rem;
-    padding: .5rem 1rem;
-    border-radius: $border-radius;
-    text-decoration: none;
-
-    &.btn-phone {
+    gap: 1rem;
+    margin-bottom: 1rem;
+    a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: $danger;
       color: #fff;
       border: none;
-      &:hover { background-color: darken($danger, 5%); }
+      font-size: 0.875rem;
+      padding: 0.75rem;
+      border-radius: 1.5rem;
+      span {
+        font-size: 3rem;
+      }
+      &:hover {
+        background-color: lighten($danger, 5%);
+      }
     }
-    &.btn-email {
-      background-color: #fff;
-      color: $body-color;
-      border: 1px solid rgba($body-color, .15);
-      &:hover { background-color: lighten($body-bg, 5%); }
-    }
+  }
+  .email-button {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    color: $body-color;
+    border: 1px solid rgba($body-color, 0.15);
+    text-align: center;
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    border-radius: 1.5rem;
     img {
       width: 1rem;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
+    }
+    &:hover {
+      background-color: lighten($body-bg, 5%);
     }
   }
 }
 
-// 4) Kontakt form styles
+// Form area hints (kept simple)
 .kontakt-form {
-  .form-label {
-    font-size: .875rem;
+  // Heading
+  h5 {
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: .5rem;
+    margin-bottom: 2rem;
   }
-  .form-control {
-    border-radius: $border-radius;
-    padding: .75rem 1rem;
-    &::placeholder {
-      color: rgba($secondary, .7);
+
+  // Small devices padding
+  padding-top: 1rem;
+
+  // Large screens: push down
+  @media (min-width: $break-lg) {
+    margin-top: 5rem;
+    padding-top: 0;
+  }
+
+  // Disclaimer styling
+  .disclaimer {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;   // align icon & text at top
+    margin-bottom: 0;          // remove any default label margin
+
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      //position: absolute;
+      //width: 0; height: 0;
+      //overflow: hidden;
+      //clip: rect(0,0,0,0);
+    }
+
+    &__icon {
+      width: 1rem;
+      height: 1rem;
+      margin-top: 0.25rem;       // nudge it to match text top
+      background-color: $danger;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-size: 0.6rem 0.6rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: background-image .2s;
+    }
+
+    input + &__icon {
+      background-image: url('public/icons/check.svg');
+    }
+    // when checked, show white check
+    input:checked + &__icon {
+      background-image: url('public/icons/check.svg');
+    }
+
+    &__text {
+      line-height: 1.4;
+      font-size: .75rem;
+      font-weight: 600;
+      color: #898682;
     }
   }
-  textarea.form-control {
-    resize: vertical;
-    min-height: 10rem;
-  }
-  .btn-submit {
-    margin-top: 1rem;
+
+  // Submit button stays at bottom on mobile, right on desktop
+  button[type="submit"] {
+    align-self: flex-start;  // mobile: below the disclaimer
+    border-radius: 1.5rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $danger;
     color: #fff;
     border: none;
-    font-size: 1rem;
-    padding: .75rem 2rem;
-    border-radius: 2rem;
-    &:hover { background-color: darken($danger, 5%); }
-  }
-  .form-note {
-    display: flex;
-    align-items: center;
-    font-size: .75rem;
-    color: $secondary;
-    margin-top: 1rem;
-    img {
-      width: .75rem;
-      margin-right: .5rem;
-    }
-    p {
-      margin: 0;
-      line-height: 1.4;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.25rem;
+    @media (min-width: $break-lg) {
+      align-self: flex-end;  // desktop: right edge
     }
   }
-}
 
-// 5) Responsive adjustments
-@media (max-width: $break-md) {
-  .kontakt-info .btn-contact {
-    justify-content: center;
-  }
-  .kontakt-form .row > [class*="col-"] {
-    margin-bottom: 1rem;
+  // Submit button alignment
+  .btn-danger {
+    @media (min-width: $break-lg) {
+      margin-left: auto;   // push to right on large
+    }
   }
 }
