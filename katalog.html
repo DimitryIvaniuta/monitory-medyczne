@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Katalogi produktów — Monitory medyczne</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+
+<!-- Navbar (reuse) -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <div class="container-fluid">
+        <!-- 1) Logo flush left -->
+        <a class="navbar-brand me-auto" href="#">
+            <img src="./public/icons/logo.svg" alt="Logo">
+        </a>
+
+        <!-- toggler stays -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 2) Centered menu -->
+        <div id="mainNav" class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#">O nas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Oferta</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Katalogi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Serwis</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Kontakt</a></li>
+            </ul>
+        </div>
+
+        <!-- 3) Phone flush right -->
+        <div class="d-flex align-items-center ms-auto">
+            <a
+                    class="btn d-inline-flex align-items-center flex-nowrap"
+                    href="tel:+486506468569"
+            >
+                <img src="./public/icons/contact-phone.svg" alt="" class="me-1">
+                +48 650 468 569
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Page header -->
+<section class="container px-5 pt-4 pb-3">
+    <span class="badge bg-danger text-uppercase fs-7">Katalogi</span>
+    <h1 class="display-5 fw-bold mt-2">Katalogi produktów</h1>
+</section>
+
+<!-- Filter nav -->
+<nav class="container px-5 mb-4">
+    <ul class="nav nav-pills justify-content-start gap-3 katalog-filter">
+        <li class="nav-item">
+            <a class="nav-link rounded-pill px-4 py-2" href="#">Wszystkie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active rounded-pill px-4 py-2" href="#">Monitory Diagnostyczne</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link rounded-pill px-4 py-2" href="#">Monitory chirurgiczne</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link rounded-pill px-4 py-2" href="#">Detektory</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Grid of cards -->
+<main class="container px-5 mb-5 katalog-grid">
+    <div class="row g-4">
+        <!-- repeat each of these cards -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 katalog-card">
+
+                <div class="katalog-card-image__info d-flex flex-column
+              align-items-center justify-content-center text-center">
+                    <img src="public/icons/pdf.svg" class="mb-3" width="48" height="56" alt="PDF">
+                    <p class="mb-0 px-3">
+                        Lorem ipsum dolor sit empresiva alustri
+                    </p>
+                    <a href="#" class="btn btn-light mt-3 katalog-card__btn katalog-card-image__btn d-inline-flex align-items-center">
+                        <img src="public/icons/download.svg" class="me-1" alt="">Pobierz katalog
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Katalog card (wide) -->
+        <div class="col-6 col-md-6 col-lg-6">
+        <div class="katalog-card-image card h-100">
+            <figure class="katalog-card-image__media m-0">
+                <img src="public/img/monitor.gif" alt="27-inch 8 MP monitor"
+                     class="w-100 h-100 object-fit-cover">
+            </figure>
+
+            <div class="katalog-card-image__info d-flex flex-column
+              align-items-center justify-content-center text-center">
+                <img src="public/icons/pdf.svg" class="mb-3" width="48" height="56" alt="PDF">
+                <p class="mb-0">
+                    27-inch 8 MP<br>Clinical Review Monitor
+                </p>
+                <a href="#" class="btn btn-light mt-3 katalog-card__btn katalog-card-image__btn d-inline-flex align-items-center">
+                    <img src="public/icons/download.svg" class="me-1" alt="">Pobierz katalog
+                </a>
+            </div>
+        </div>
+        </div>
+        <!-- continue repeating cards to fill the grid -->
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-row">
+            <!-- Contact column -->
+            <ul class="footer-contact">
+                <li>&nbsp;</li>
+                <li>
+                    <img src="./public/icons/contact-phone-red.svg" alt="">
+                    <a href="tel:+48660468569">+48 660 468 569</a>
+                </li>
+                <li>
+                    <img src="./public/icons/contact-phone-red.svg" alt="">
+                    <a href="tel:+48502342560">+48 502 342 560</a>
+                </li>
+                <li>
+                    <img src="./public/icons/contact-email-red.svg" alt="">
+                    <a href="mailto:biuro@iqrad.pl">biuro@iqrad.pl</a>
+                </li>
+            </ul>
+
+            <!-- Navigation columns -->
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Referencje</a></li>
+                <li><a href="#">Serwis</a></li>
+                <li><a href="#">Katalogi</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Monitory chirurgiczne</a></li>
+                <li><a href="#">Detektory</a></li>
+                <li>&nbsp;</li>
+                <li class="fw-bold"><a href="#">Baza wiedzy</a></li>
+                <li><a href="#">Monitory medyczne</a></li>
+                <li><a href="#">Detektory</a></li>
+            </ul>
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Polityka prywatności</a></li>
+                <li><a href="#">Rodo</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="public/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -29,6 +29,11 @@
 
 .katalog-grid {
   .katalog-card {
+    min-height: 200px;
+    min-width: 260px;
+    max-height: 200px;
+    max-width: 260px;
+    overflow: visible;
     border: none;
     border-radius: $border-radius-lg;
     box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
@@ -56,53 +61,78 @@
       }
     }
   }
-}
-
-/* ------------------------------------------------------------------
+  /* ------------------------------------------------------------------
    Wide katalog card: half image, half info
 ------------------------------------------------------------------ */
-/* --------------------------------------------------------------
-   Katalog tile: image left 50%, info right 50% (compact version)
--------------------------------------------------------------- */
-.katalog-card-image {
-  display: flex;
-  flex-direction: row;
-  border: none;
-  border-radius: $border-radius-lg;
-  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,.05);
-  background: #fff;
-  overflow: visible;                     // mask rounded corners
-
-  /* Left half */
-  &__media {
-    flex: 0 0 50%;
-    height: 100%;
-    overflow: hidden;                   // keep rounded corners
-    img { width: 100%; height: 100%; object-fit: cover; }
-  }
-
-  /* Right half */
-  &__info {
+  /* --------------------------------------------------------------
+     Katalog tile: image left 50%, info right 50% (compact version)
+  -------------------------------------------------------------- */
+  .katalog-card-image {
     position: relative;
-    flex: 1 1 50%;
-    padding: 1rem 1rem 0;               // top-left alignment
+    min-height: 200px;
+    min-width: 500px;
+    max-height: 200px;
+    max-width: 500px;
+    overflow: visible;                  // allow pill to protrude
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+    flex-direction: row;
+    border-radius: $border-radius-lg;   // keeps outer corners
+    font-weight: 400;
+    /* — LEFT HALF — */
+    &__media {
+      flex: 0 0 50%;
+      height: 100%;
+      overflow: hidden;                 // masks image to radius
+      border-radius: $border-radius-lg 0 0 $border-radius-lg;   /* round TL & BL */
+      img { width: 100%; height: 100%; object-fit: cover; }
+      position: relative;
+      //left: -0.8rem;
+    }
 
-  /* Overlapping pill */
-  &__btn {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -.5rem;                    // 50 % overlap (btn ~3 rem tall)
-    border-radius: 9999px;
-    padding: 0.5rem 1.25rem;
-    font-size: .85rem;
-    font-weight: 800;
-    box-shadow: 0 .25rem .5rem rgba(0,0,0,.05);
-    text-wrap: nowrap;
-    flex-wrap: nowrap;
+    /* — RIGHT HALF — */
+    &__info {
+      position: relative;
+      flex: 1 1 50%;
+      //padding: 1rem 1rem 3.5rem;        // extra bottom pad for pill overlap
+      padding-top: 0 !important;
+      top: -.7rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;              // center horizontally
+      justify-content: flex-start;      // stick to the top
+      text-align: center;
+      img.mb-3 {  // the PDF icon
+        margin-bottom: .5rem !important;    // was 1rem (mb-3) – pulls text up too
+      }
+    }
+
+    /* — DOWNLOAD PILL — */
+    &__btn {
+      position: absolute;
+      left: 50%;
+      bottom: -1.85rem;                 // 50 % of pill (≈2.5 rem tall)
+      transform: translateX(-50%);
+      padding: 0.45rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 800;
+      box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
+      white-space: nowrap;              // prevent wrap
+      z-index: 2;                       // sit above neighbour cards
+      border: none;
+      border-radius: $border-radius-lg;
+    }
+  }
+}
+
+@media (min-width: 992px) {          /* lg breakpoint */
+  .katalog-card-image__btn {
+    bottom: -1.25rem;                /* overlap */
+  }
+}
+
+@media (max-width: 991.98px) {       /* mobile/tablet */
+  .katalog-card-image__btn {
+    position: static;                /* sits inside card */
+    margin-top: 1rem;                /* nice spacing */
   }
 }

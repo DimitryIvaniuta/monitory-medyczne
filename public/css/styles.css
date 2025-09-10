@@ -12785,6 +12785,11 @@ input:checked + .kontakt-form .disclaimer__icon {
 }
 
 .katalog-grid .katalog-card {
+  min-height: 200px;
+  min-width: 260px;
+  max-height: 200px;
+  max-width: 260px;
+  overflow: visible;
   border: none;
   border-radius: 1rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
@@ -12812,61 +12817,87 @@ input:checked + .kontakt-form .disclaimer__icon {
     flex-direction: row;
   }
 }
-
-/* ------------------------------------------------------------------
-   Wide katalog card: half image, half info
------------------------------------------------------------------- */
-/* --------------------------------------------------------------
-   Katalog tile: image left 50%, info right 50% (compact version)
--------------------------------------------------------------- */
-.katalog-card-image {
+.katalog-grid {
+  /* ------------------------------------------------------------------
+     Wide katalog card: half image, half info
+  ------------------------------------------------------------------ */
+  /* --------------------------------------------------------------
+     Katalog tile: image left 50%, info right 50% (compact version)
+  -------------------------------------------------------------- */
+}
+.katalog-grid .katalog-card-image {
+  position: relative;
+  min-height: 200px;
+  min-width: 500px;
+  max-height: 200px;
+  max-width: 500px;
+  overflow: visible;
   display: flex;
   flex-direction: row;
-  border: none;
   border-radius: 1rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-  background: #fff;
-  overflow: visible;
-  /* Left half */
+  font-weight: 400;
+  /* — LEFT HALF — */
 }
-.katalog-card-image__media {
+.katalog-grid .katalog-card-image__media {
   flex: 0 0 50%;
   height: 100%;
   overflow: hidden;
+  border-radius: 1rem 0 0 1rem; /* round TL & BL */
 }
-.katalog-card-image__media img {
+.katalog-grid .katalog-card-image__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.katalog-card-image {
-  /* Right half */
+.katalog-grid .katalog-card-image__media {
+  position: relative;
 }
-.katalog-card-image__info {
+.katalog-grid .katalog-card-image {
+  /* — RIGHT HALF — */
+}
+.katalog-grid .katalog-card-image__info {
   position: relative;
   flex: 1 1 50%;
-  padding: 1rem 1rem 0;
+  padding-top: 0 !important;
+  top: -0.7rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
+  text-align: center;
 }
-.katalog-card-image {
-  /* Overlapping pill */
+.katalog-grid .katalog-card-image__info img.mb-3 {
+  margin-bottom: 0.5rem !important;
 }
-.katalog-card-image__btn {
+.katalog-grid .katalog-card-image {
+  /* — DOWNLOAD PILL — */
+}
+.katalog-grid .katalog-card-image__btn {
   position: absolute;
   left: 50%;
+  bottom: -1.85rem;
   transform: translateX(-50%);
-  bottom: -0.5rem;
-  border-radius: 9999px;
-  padding: 0.5rem 1.25rem;
-  font-size: 0.85rem;
+  padding: 0.45rem 1.5rem;
+  font-size: 1rem;
   font-weight: 800;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-  text-wrap: nowrap;
-  flex-wrap: nowrap;
+  white-space: nowrap;
+  z-index: 2;
+  border: none;
+  border-radius: 1rem;
 }
 
+@media (min-width: 992px) { /* lg breakpoint */
+  .katalog-card-image__btn {
+    bottom: -1.25rem; /* overlap */
+  }
+}
+@media (max-width: 991.98px) { /* mobile/tablet */
+  .katalog-card-image__btn {
+    position: static; /* sits inside card */
+    margin-top: 1rem; /* nice spacing */
+  }
+}
 a {
   color: #0A7DB8;
 }
