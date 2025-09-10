@@ -12756,6 +12756,117 @@ input:checked + .kontakt-form .disclaimer__icon {
   }
 }
 
+.katalog-filter .nav-link {
+  background-color: #F0ECE4;
+  color: #212529;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .katalog-filter .nav-link {
+    font-size: 1rem;
+  }
+}
+.katalog-filter .nav-link.active {
+  background-color: #0A7DB8 !important;
+  color: #fff !important;
+  position: relative;
+}
+.katalog-filter .nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 2rem;
+  height: 0.25rem;
+  background-color: #0A7DB8;
+  border-radius: 0.125rem;
+}
+
+.katalog-grid .katalog-card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+.katalog-grid .katalog-card .card-body {
+  padding: 2rem 1rem;
+}
+.katalog-grid .katalog-card__icon {
+  width: 2rem;
+  height: auto;
+}
+.katalog-grid .katalog-card__text {
+  font-size: 0.95rem;
+  color: #212529;
+  margin-bottom: 1rem;
+}
+.katalog-grid .katalog-card__btn {
+  font-size: 0.9rem;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+}
+@media (min-width: 992px) {
+  .katalog-grid .katalog-card--wide .card-body {
+    flex-direction: row;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Wide katalog card: half image, half info
+------------------------------------------------------------------ */
+/* --------------------------------------------------------------
+   Katalog tile: image left 50%, info right 50% (compact version)
+-------------------------------------------------------------- */
+.katalog-card-image {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+  background: #fff;
+  overflow: visible;
+  /* Left half */
+}
+.katalog-card-image__media {
+  flex: 0 0 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.katalog-card-image__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.katalog-card-image {
+  /* Right half */
+}
+.katalog-card-image__info {
+  position: relative;
+  flex: 1 1 50%;
+  padding: 1rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.katalog-card-image {
+  /* Overlapping pill */
+}
+.katalog-card-image__btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.5rem;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+  text-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
 a {
   color: #0A7DB8;
 }

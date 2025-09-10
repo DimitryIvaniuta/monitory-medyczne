@@ -1,0 +1,108 @@
+// Page‐specific styles for “Katalogi produktów”
+.katalog-filter {
+  .nav-link {
+    background-color: $body-bg;
+    color: $body-color;
+    font-weight: 600;
+    @media (min-width: $break-md) {
+      font-size: 1rem;
+    }
+    &.active {
+      background-color: $primary !important;
+      color: #fff !important;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 2rem;
+        height: 0.25rem;
+        background-color: $primary;
+        border-radius: 0.125rem;
+      }
+    }
+  }
+}
+
+.katalog-grid {
+  .katalog-card {
+    border: none;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
+    background: #fff;
+    .card-body {
+      padding: 2rem 1rem;
+    }
+    &__icon {
+      width: 2rem;
+      height: auto;
+    }
+    &__text {
+      font-size: 0.95rem;
+      color: $body-color;
+      margin-bottom: 1rem;
+    }
+    &__btn {
+      font-size: 0.9rem;
+      border-radius: 2rem;
+      padding: 0.5rem 1rem;
+    }
+    &--wide {
+      @media (min-width: $break-lg) {
+        .card-body { flex-direction: row; }
+      }
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Wide katalog card: half image, half info
+------------------------------------------------------------------ */
+/* --------------------------------------------------------------
+   Katalog tile: image left 50%, info right 50% (compact version)
+-------------------------------------------------------------- */
+.katalog-card-image {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,.05);
+  background: #fff;
+  overflow: visible;                     // mask rounded corners
+
+  /* Left half */
+  &__media {
+    flex: 0 0 50%;
+    height: 100%;
+    overflow: hidden;                   // keep rounded corners
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+
+  /* Right half */
+  &__info {
+    position: relative;
+    flex: 1 1 50%;
+    padding: 1rem 1rem 0;               // top-left alignment
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  /* Overlapping pill */
+  &__btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -.5rem;                    // 50 % overlap (btn ~3 rem tall)
+    border-radius: 9999px;
+    padding: 0.5rem 1.25rem;
+    font-size: .85rem;
+    font-weight: 800;
+    box-shadow: 0 .25rem .5rem rgba(0,0,0,.05);
+    text-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
