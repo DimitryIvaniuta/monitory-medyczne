@@ -12756,37 +12756,49 @@ input:checked + .kontakt-form .disclaimer__icon {
   }
 }
 
-.katalog-filter .nav-link {
-  background-color: #F0ECE4;
-  color: #212529;
-  font-weight: 600;
-}
-@media (min-width: 768px) {
-  .katalog-filter .nav-link {
-    font-size: 1rem;
+/*.katalog-filter {
+  .nav-link {
+    background-color: $body-bg;
+    color: $body-color;
+    font-weight: 600;
+    @media (min-width: $break-md) {
+      font-size: 1rem;
+    }
+    &.active {
+      background-color: $primary !important;
+      color: #fff !important;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 2rem;
+        height: 0.25rem;
+        background-color: $primary;
+        border-radius: 0.125rem;
+      }
+    }
   }
-}
-.katalog-filter .nav-link.active {
-  background-color: #0A7DB8 !important;
-  color: #fff !important;
-  position: relative;
-}
-.katalog-filter .nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: -0.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  width: 2rem;
-  height: 0.25rem;
-  background-color: #0A7DB8;
-  border-radius: 0.125rem;
+}*/
+.katalog-header .badge {
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  line-height: 1;
 }
 
+.katalog-grid__row {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
 .katalog-grid .katalog-card {
-  min-height: 200px;
-  min-width: 260px;
+  min-height: 220px;
+  min-width: 280px;
   max-height: 200px;
   max-width: 260px;
   overflow: visible;
@@ -12794,6 +12806,10 @@ input:checked + .kontakt-form .disclaimer__icon {
   border-radius: 1rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
   background: #fff;
+}
+.katalog-grid .katalog-card .row {
+  --bs-gutter-x: 32px;
+  --bs-gutter-y: 40px;
 }
 .katalog-grid .katalog-card .card-body {
   padding: 2rem 1rem;
@@ -12827,10 +12843,12 @@ input:checked + .kontakt-form .disclaimer__icon {
 }
 .katalog-grid .katalog-card-image {
   position: relative;
-  min-height: 200px;
-  min-width: 500px;
-  max-height: 200px;
-  max-width: 500px;
+  min-height: 210px;
+  min-width: 580px;
+  max-height: 220px;
+  max-width: 600px;
+  width: 100%;
+  flex: 0 0 100%;
   overflow: visible;
   display: flex;
   flex-direction: row;
@@ -12898,6 +12916,89 @@ input:checked + .kontakt-form .disclaimer__icon {
     margin-top: 1rem; /* nice spacing */
   }
 }
+/* ──────────────────────────────────────────────────────────
+   Katalog filter navbar
+─────────────────────────────────────────────────────────── */
+#katalogFilter {
+  position: relative;
+  padding-bottom: 1.25rem;
+  /* full-width red baseline */
+}
+#katalogFilter::after {
+  content: "";
+  position: absolute;
+  /* 1 — let it cover the whole viewport */
+  width: 100vw;
+  height: 1px;
+  background: #778294;
+  opacity: 0.25;
+  /* 2 — centre it, ignoring container padding */
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  pointer-events: none;
+}
+#katalogFilter {
+  /* pills container */
+}
+#katalogFilter .katalog-filter {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+#katalogFilter {
+  /* every pill */
+}
+#katalogFilter .nav-link {
+  padding: 0.75rem 2.5rem;
+  border-radius: 9999px;
+  background: #fff;
+  font-weight: 600;
+  color: #212529;
+  position: relative;
+  transition: background 0.2s;
+}
+#katalogFilter .nav-link:hover {
+  background: rgb(255, 229.5, 229.5);
+}
+#katalogFilter .nav-link {
+  /* active (red) pill */
+}
+#katalogFilter .nav-link.active {
+  background: #E11D48;
+  color: #fff;
+  /* under-pill red bar */
+}
+#katalogFilter .nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -21px; /* triangle height + 1 */
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: #E11D48;
+}
+#katalogFilter .nav-link.active {
+  /* red downward triangle */
+}
+#katalogFilter .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px; /* triangle height */
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #E11D48;
+}
+
 a {
   color: #0A7DB8;
 }

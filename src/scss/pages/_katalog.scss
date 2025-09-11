@@ -1,5 +1,5 @@
 // Page‐specific styles for “Katalogi produktów”
-.katalog-filter {
+/*.katalog-filter {
   .nav-link {
     background-color: $body-bg;
     color: $body-color;
@@ -25,12 +25,25 @@
       }
     }
   }
+}*/
+.katalog-header .badge {
+  border-radius: 9999px;      // pill shape
+  padding: 0.5rem 1.5rem;     // vertical 0.5rem, horizontal 1.5rem
+  font-weight: 600;
+  font-size: .85rem;
+  line-height: 1;
 }
-
 .katalog-grid {
+  &__row {
+    display: grid;
+    gap: 1.5rem; // 24 px gap both axes
+    grid-template-columns: repeat(auto-fill,
+                                minmax(260px, 1fr)                       // never <260 px, else stretch
+                            );
+  }
   .katalog-card {
-    min-height: 200px;
-    min-width: 260px;
+    min-height: 220px;
+    min-width: 280px;
     max-height: 200px;
     max-width: 260px;
     overflow: visible;
@@ -38,6 +51,10 @@
     border-radius: $border-radius-lg;
     box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.05);
     background: #fff;
+    .row {
+      --bs-gutter-x: 32px;   // horiz gap 32 px
+      --bs-gutter-y: 40px;   // vert  gap 40 px
+    }
     .card-body {
       padding: 2rem 1rem;
     }
@@ -69,11 +86,13 @@
   -------------------------------------------------------------- */
   .katalog-card-image {
     position: relative;
-    min-height: 200px;
-    min-width: 500px;
-    max-height: 200px;
-    max-width: 500px;
-    overflow: visible;                  // allow pill to protrude
+    min-height: 210px;
+    min-width: 580px;
+    max-height: 220px;
+    max-width: 600px;
+    width: 100%;           // always fill its grid column
+    flex: 0 0 100%;        // prevents flex shrink from cropping
+    overflow: visible;     // allow pill to protrude
     display: flex;
     flex-direction: row;
     border-radius: $border-radius-lg;   // keeps outer corners
@@ -134,5 +153,96 @@
   .katalog-card-image__btn {
     position: static;                /* sits inside card */
     margin-top: 1rem;                /* nice spacing */
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   Katalog filter navbar
+─────────────────────────────────────────────────────────── */
+#katalogFilter {
+  position: relative;
+  padding-bottom: 1.25rem;              // leave space for red bar
+
+  /* full-width red baseline */
+  &::after {
+    //content: "";
+    //position: absolute;
+    //left: 0;
+    //right: 0;
+    //bottom: 0;
+    //height: 3px;
+    //background: $font-color-gray-60;               // red line
+    //opacity: .25;                       // subtle
+    //width: 100%;
+    content: "";
+    position: absolute;
+    /* 1 — let it cover the whole viewport */
+    width: 100vw;
+    height: 1px;
+    background: $font-color-gray-60;
+    opacity: .25;
+
+    /* 2 — centre it, ignoring container padding */
+    left: 50%;
+    transform: translateX(-50%);
+
+    bottom: 0;
+    pointer-events: none;   // safeguard: nothing clickable
+  }
+
+  /* pills container */
+  .katalog-filter {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    gap: 2rem;                          // horizontal gap
+    justify-content: flex-start;
+  }
+
+  /* every pill */
+  .nav-link {
+    padding: .75rem 2.5rem;
+    border-radius: 9999px;
+    background: #fff;
+    font-weight: 600;
+    color: $body-color;
+    position: relative;
+    transition: background .2s;
+
+    &:hover { background: lighten($color-status-error, 45%); }
+
+    /* active (red) pill */
+    &.active {
+      background: $danger;
+      color: #fff;
+
+      /* under-pill red bar */
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -21px;                  /* triangle height + 1 */
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background: $danger;
+      }
+
+      /* red downward triangle */
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;                   /* triangle height */
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 10px solid $danger;
+      }
+    }
   }
 }

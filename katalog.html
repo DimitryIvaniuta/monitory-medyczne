@@ -48,32 +48,26 @@
 </nav>
 
 <!-- Page header -->
-<section class="container px-5 pt-4 pb-3">
-    <span class="badge bg-danger text-uppercase fs-7">Katalogi</span>
+<section class="katalog-header container px-5 pt-4 pb-3">
+    <span class="badge bg-danger fs-7 rounded-pill px-4 py-2">
+        Katalogi
+    </span>
     <h1 class="display-5 fw-bold mt-2">Katalogi produktów</h1>
 </section>
 
 <!-- Filter nav -->
-<nav class="container px-5 mb-4">
-    <ul class="nav nav-pills justify-content-start gap-3 katalog-filter">
-        <li class="nav-item">
-            <a class="nav-link rounded-pill px-4 py-2" href="#">Wszystkie</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active rounded-pill px-4 py-2" href="#">Monitory Diagnostyczne</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link rounded-pill px-4 py-2" href="#">Monitory chirurgiczne</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link rounded-pill px-4 py-2" href="#">Detektory</a>
-        </li>
+<nav id="katalogFilter" class="container px-5 mb-4">
+    <ul class="nav katalog-filter gap-3">
+        <li class="nav-item"><a class="nav-link" href="#">Wszystkie</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Monitory Diagnostyczne</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Monitory chirurgiczne</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Detektory</a></li>
     </ul>
 </nav>
 
 <!-- Grid of cards -->
 <main class="container px-5 mb-5 katalog-grid">
-    <div class="row g-4">
+    <div class="row g-4 gx-5 gy-5 katalog-grid__row">
         <!-- repeat each of these cards -->
         <div class="col-12 col-md-6 col-lg-3">
             <div class="card h-100 katalog-card">
@@ -90,8 +84,85 @@
                 </div>
             </div>
         </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 katalog-card">
+
+                <div class="katalog-card-image__info d-flex flex-column
+              align-items-center justify-content-center text-center">
+                    <img src="public/icons/pdf.svg" class="mb-3" width="48" height="56" alt="PDF">
+                    <p class="mb-0 px-3">
+                        Lorem ipsum dolor sit empresiva alustri
+                    </p>
+                    <a href="#" class="btn btn-light mt-3 katalog-card__btn katalog-card-image__btn d-inline-flex align-items-center">
+                        <img src="public/icons/download.svg" class="me-1" alt="">Pobierz katalog
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 katalog-card">
+
+                <div class="katalog-card-image__info d-flex flex-column
+              align-items-center justify-content-center text-center">
+                    <img src="public/icons/pdf.svg" class="mb-3" width="48" height="56" alt="PDF">
+                    <p class="mb-0 px-3">
+                        Lorem ipsum dolor sit empresiva alustri
+                    </p>
+                    <a href="#" class="btn btn-light mt-3 katalog-card__btn katalog-card-image__btn d-inline-flex align-items-center">
+                        <img src="public/icons/download.svg" class="me-1" alt="">Pobierz katalog
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 katalog-card">
+
+                <div class="katalog-card-image__info d-flex flex-column
+              align-items-center justify-content-center text-center">
+                    <img src="public/icons/pdf.svg" class="mb-3" width="48" height="56" alt="PDF">
+                    <p class="mb-0 px-3">
+                        Lorem ipsum dolor sit empresiva alustri
+                    </p>
+                    <a href="#" class="btn btn-light mt-3 katalog-card__btn katalog-card-image__btn d-inline-flex align-items-center">
+                        <img src="public/icons/download.svg" class="me-1" alt="">Pobierz katalog
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 katalog-card">
+
+                <div class="katalog-card-image__info d-flex flex-column
+              align-items-center justify-content-center text-center">
+                    <img src="public/icons/pdf.svg" class="mb-3" width="48" height="56" alt="PDF">
+                    <p class="mb-0 px-3">
+                        Lorem ipsum dolor sit empresiva alustri
+                    </p>
+                    <a href="#" class="btn btn-light mt-3 katalog-card__btn katalog-card-image__btn d-inline-flex align-items-center">
+                        <img src="public/icons/download.svg" class="me-1" alt="">Pobierz katalog
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 katalog-card">
+
+                <div class="katalog-card-image__info d-flex flex-column
+              align-items-center justify-content-center text-center">
+                    <img src="public/icons/pdf.svg" class="mb-3" width="48" height="56" alt="PDF">
+                    <p class="mb-0 px-3">
+                        Lorem ipsum dolor sit empresiva alustri
+                    </p>
+                    <a href="#" class="btn btn-light mt-3 katalog-card__btn katalog-card-image__btn d-inline-flex align-items-center">
+                        <img src="public/icons/download.svg" class="me-1" alt="">Pobierz katalog
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Katalog card (wide) -->
-        <div class="col-6 col-md-6 col-lg-6">
+        <div class="col-12 col-md-6 col-lg-6">
         <div class="katalog-card-image card h-100">
             <figure class="katalog-card-image__media m-0">
                 <img src="public/img/monitor.gif" alt="27-inch 8 MP monitor"
@@ -110,6 +181,7 @@
             </div>
         </div>
         </div>
+        
         <!-- continue repeating cards to fill the grid -->
     </div>
 </main>
