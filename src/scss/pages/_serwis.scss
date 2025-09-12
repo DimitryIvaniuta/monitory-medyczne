@@ -22,6 +22,12 @@
     @media (min-width: $break-md) { font-size: 3.5rem; }
   }
 
+  h5 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
   &__lead {
     color: rgba(255,255,255,0.85);
     max-width: 600px;
@@ -37,7 +43,40 @@
   h2 {
     font-size: 2rem; font-weight: 700;
   }
-}
+  .section-title{ position: relative; }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:100vw;           /* full viewport width */
+    height:1px;            /* 1px line */
+    background: $font-color-gray-60;    /* grey */
+    position:relative;
+    left:50%;
+    transform:translateX(-50%); /* center the 100vw line */
+    margin-top:8px;        /* spacing under the text */
+    bottom: 0;
+    pointer-events: none;
+    opacity: .25;
+    margin-block: 30px;
+  }
+
+  .formularz::before {
+      content: "";
+      position: absolute;
+      /* 1 — let it cover the whole viewport */
+      width: 100vw;
+      height: 1px;
+      background: $font-color-gray-60;
+      opacity: .25;
+
+      /* 2 — centre it, ignoring container padding */
+      left: 50%;
+      transform: translateX(-50%);
+
+      bottom: 0;
+      pointer-events: none;   // safeguard: nothing clickable
+    }
+  }
 
 // 3) Section headings + labels
 .serwis-form h5 {
