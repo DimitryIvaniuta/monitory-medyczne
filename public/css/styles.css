@@ -2181,7 +2181,7 @@ progress {
   background-color: var(--bs-body-bg);
   background-clip: padding-box;
   border: var(--bs-border-width) solid var(--bs-border-color);
-  border-radius: var(--bs-border-radius);
+  border-radius: 1.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2305,11 +2305,11 @@ textarea.form-control-lg {
 }
 .form-control-color::-moz-color-swatch {
   border: 0 !important;
-  border-radius: var(--bs-border-radius);
+  border-radius: 1.5rem;
 }
 .form-control-color::-webkit-color-swatch {
   border: 0 !important;
-  border-radius: var(--bs-border-radius);
+  border-radius: 1.5rem;
 }
 .form-control-color.form-control-sm {
   height: calc(1.5em + 0.5rem + calc(var(--bs-border-width) * 2));
@@ -2334,7 +2334,7 @@ textarea.form-control-lg {
   background-position: right 0.75rem center;
   background-size: 16px 12px;
   border: var(--bs-border-width) solid var(--bs-border-color);
-  border-radius: var(--bs-border-radius);
+  border-radius: 1.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2665,7 +2665,7 @@ textarea.form-control-lg {
   height: 1.5em;
   content: "";
   background-color: var(--bs-body-bg);
-  border-radius: var(--bs-border-radius);
+  border-radius: 1.5rem;
 }
 .form-floating > textarea:disabled ~ label::after {
   background-color: var(--bs-secondary-bg);
@@ -2718,7 +2718,7 @@ textarea.form-control-lg {
   white-space: nowrap;
   background-color: var(--bs-tertiary-bg);
   border: var(--bs-border-width) solid var(--bs-border-color);
-  border-radius: var(--bs-border-radius);
+  border-radius: 1.5rem;
 }
 
 .input-group-lg > .form-control,
@@ -12697,6 +12697,13 @@ label {
     padding-top: 0;
   }
 }
+.kontakt-form .form-control {
+  border-radius: 1.5rem;
+}
+.kontakt-form .form-control.form-control-lg {
+  padding: 0 0.25rem;
+  background: #fff;
+}
 .kontakt-form .disclaimer {
   cursor: pointer;
   display: flex;
@@ -12999,6 +13006,131 @@ input:checked + .kontakt-form .disclaimer__icon {
   border-top: 10px solid #E11D48;
 }
 
+.serwis-hero {
+  position: relative;
+  background: url("../img/serwis-hero.jpg") center/cover no-repeat;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+.serwis-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.serwis-hero .badge {
+  font-size: 0.75rem;
+}
+.serwis-hero h1, .serwis-hero .h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .serwis-hero h1, .serwis-hero .h1 {
+    font-size: 3.5rem;
+  }
+}
+.serwis-hero__lead {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .serwis-hero__lead {
+    font-size: 1.125rem;
+  }
+}
+
+.serwis-form {
+  background: #F0ECE4;
+  padding-top: 3rem;
+}
+.serwis-form h2, .serwis-form .h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.serwis-form h5, .serwis-form .h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.serwis-form .form-label.small {
+  font-weight: 600;
+}
+
+.serwis-form .form-control {
+  border-radius: 1.5rem;
+}
+.serwis-form .form-control.form-control-lg {
+  padding: 0.75rem 1rem;
+  background: #fff;
+}
+
+.serwis-form .form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2rem;
+}
+
+.serwis-form .form-check-label {
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.serwis-droparea {
+  border: 1px dashed rgba(80, 78, 76, 0.4);
+  border-radius: 1.5rem;
+}
+.serwis-droparea img {
+  width: 2rem;
+}
+.serwis-droparea p {
+  color: #504E4C;
+  font-size: 0.9rem;
+}
+
+.serwis-form .disclaimer {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+.serwis-form .disclaimer input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.serwis-form .disclaimer__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+  background: #E11D48;
+  border-radius: 50%;
+  background-size: 0.6rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+input:checked + .serwis-form .disclaimer__icon {
+  background-image: url("public/icons/check.svg");
+}
+
+.serwis-form button[type=submit] {
+  border-radius: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  .serwis-form {
+    padding-top: 4rem;
+  }
+  .serwis-form .disclaimer {
+    margin-right: 2rem;
+  }
+  .serwis-form button[type=submit] {
+    margin-top: 0;
+  }
+}
 a {
   color: #0A7DB8;
 }

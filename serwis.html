@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Serwis — Monitory medyczne</title>
+    <link rel="stylesheet" href="public/css/styles.css" />
+</head>
+<body class="bg-light">
+
+<!-- Navbar (reuse your existing navbar) -->
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <div class="container-fluid">
+        <!-- 1) Logo flush left -->
+        <a class="navbar-brand me-auto" href="#">
+            <img src="./public/icons/logo.svg" alt="Logo">
+        </a>
+
+        <!-- toggler stays -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 2) Centered menu -->
+        <div id="mainNav" class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#">O nas</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Oferta</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Katalogi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Serwis</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Kontakt</a></li>
+            </ul>
+        </div>
+
+        <!-- 3) Phone flush right -->
+        <div class="d-flex align-items-center ms-auto">
+            <a
+                    class="btn d-inline-flex align-items-center flex-nowrap"
+                    href="tel:+486506468569"
+            >
+                <img src="./public/icons/contact-phone.svg" alt="" class="me-1">
+                +48 650 468 569
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="serwis-hero position-relative text-white">
+    <div class="serwis-hero__overlay"></div>
+    <div class="container px-5 py-5 position-relative">
+        <span class="badge bg-danger fs-7 rounded-pill px-4 py-2">
+            Serwis
+        </span>
+        <h1 class="display-5 fw-bold mt-2">Servis</h1>
+        <h5 class="display-4 fw-bold mt-2">Zgłoś reklamację lub<br/>serwis sprzętu</h5>
+        <p class="serwis-hero__lead mt-3">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
+        </p>
+    </div>
+</section>
+
+<!-- Service Form -->
+<main class="serwis-form container px-5 py-5">
+    <h2 class="fw-bold mb-4 text-center">Wypełnij formularz</h2>
+
+    <!-- Section 1 -->
+    <div class="row align-items-start mb-5">
+        <div class="col-md-8">
+            <h5 class="fw-semibold mb-3">1. Dane osobowe</h5>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <small class="text-secondary">* pola obowiązkowe</small>
+        </div>
+
+        <!-- Row: Name + Company -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label small ps-3">Imię i nazwisko *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="Adam Nowak">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label small ps-3">Nazwa firmy *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="Twoja Firma sp. z o.o.">
+        </div>
+
+        <!-- Row: NIP / Email / Phone -->
+        <div class="col-md-4 mb-3">
+            <label class="form-label small ps-3">NIP *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="1234567890">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label small ps-3">Email *</label>
+            <input type="email" class="form-control form-control-lg bg-white" placeholder="adres@adres.pl">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label small ps-3">Telefon *</label>
+            <input type="tel" class="form-control form-control-lg bg-white" placeholder="+48 600 000 000">
+        </div>
+
+        <!-- Row: Ulica / Nr domu / Nr lokalu -->
+        <div class="col-md-6 mb-3">
+            <label class="form-label small ps-3">Ulica *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="ul. Przykładowa">
+        </div>
+        <div class="col-md-3 mb-3">
+            <label class="form-label small ps-3">Nr domu *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="12">
+        </div>
+        <div class="col-md-3 mb-3">
+            <label class="form-label small ps-3">Nr lokalu *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="3A">
+        </div>
+
+        <!-- Row: Miasto / Kod / Osoba kontaktowa -->
+        <div class="col-md-4 mb-3">
+            <label class="form-label small ps-3">Miasto *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="Bielsko-Biała">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label small ps-3">Kod pocztowy *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="43-300">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label small ps-3">Osoba kontaktowa</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="Telefon kontaktowy">
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="row align-items-start mb-5">
+        <div class="col-md-8">
+            <h5 class="fw-semibold mb-3">2. Dane dotyczące serwisu produktu</h5>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <small class="text-secondary">* pola obowiązkowe</small>
+        </div>
+
+        <!-- Row: Produkt model -->
+        <div class="col-12 mb-3">
+            <label class="form-label small ps-3">Nazwa produktu i model *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="Model XYZ">
+        </div>
+
+        <!-- Row: gwarancja/faktura / nr seryjny / data zakupu -->
+        <div class="col-md-4 mb-3">
+            <label class="form-label small ps-3">Numer gwarancji lub faktury</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="…">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label small ps-3">Numer seryjny *</label>
+            <input type="text" class="form-control form-control-lg bg-white" placeholder="…">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label class="form-label small  ps-3">Data zakupu produktu *</label>
+            <input type="date" class="form-control form-control-lg bg-white">
+        </div>
+
+        <!-- Row: Sposób realizacji -->
+        <div class="col-12 mb-4">
+            <label class="form-label small d-block mb-2">Sposób realizacji reklamacji</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="mode" id="opt1" checked>
+                <label class="form-check-label" for="opt1">Gwarancja</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="mode" id="opt2">
+                <label class="form-check-label" for="opt2">Odpłatna</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="mode" id="opt3">
+                <label class="form-check-label" for="opt3">Kontrakt</label>
+            </div>
+        </div>
+
+        <!-- Row: Opis uszkodzenia -->
+        <div class="col-12 mb-5">
+            <label class="form-label small ps-3">Opis uszkodzenia *</label>
+            <textarea class="form-control form-control-lg bg-white" rows="5" placeholder="Treść wiadomości…"></textarea>
+        </div>
+
+        <!-- File drop area -->
+        <div class="col-12 mb-4">
+            <label class="form-label small mb-2 ps-3">Możesz także załączyć plik logo lub zdjęcie</label>
+            <div class="serwis-droparea border bg-white p-4 text-center justify-content-center align-items-center flex-column d-flex">
+                <img src="public/icons/upload.svg" alt="Upload" class="mb-3 mt-3">
+                <p class="mb-0">Kliknij lub przesuń pliki na ten obszar<br> Maksymalna liczba plików wynosi 5.
+                </p>
+            </div>
+        </div>
+
+        <!-- Disclaimers + Submit -->
+        <div class="col-12 d-flex flex-column flex-lg-row align-items-start justify-content-between">
+            <label class="d-flex align-items-start mb-3 disclaimer">
+                <!-- 1) input first -->
+                <input type="checkbox" class="visually-hidden" />
+                <!-- 2) icon span -->
+                <span class="disclaimer__icon me-2"></span>
+                <!-- 3) text -->
+                <span class="small text-secondary">
+                                  inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsum…
+                </span>
+            </label>
+            <label class="d-flex align-items-start mb-3 disclaimer">
+                <!-- 1) input first -->
+                <input type="checkbox" class="visually-hidden" />
+                <!-- 2) icon span -->
+                <span class="disclaimer__icon me-2"></span>
+                <!-- 3) text -->
+                <span class="small text-secondary">
+                                  inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsum…
+                </span>
+            </label>
+            <!-- Submit button (now always below) -->
+            <button type="submit" class="btn btn-danger d-flex">
+                Wyślij zgłoszenie
+            </button>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-row">
+            <!-- Contact column -->
+            <ul class="footer-contact">
+                <li>&nbsp;</li>
+                <li>
+                    <img src="./public/icons/contact-phone-red.svg" alt="">
+                    <a href="tel:+48660468569">+48 660 468 569</a>
+                </li>
+                <li>
+                    <img src="./public/icons/contact-phone-red.svg" alt="">
+                    <a href="tel:+48502342560">+48 502 342 560</a>
+                </li>
+                <li>
+                    <img src="./public/icons/contact-email-red.svg" alt="">
+                    <a href="mailto:biuro@iqrad.pl">biuro@iqrad.pl</a>
+                </li>
+            </ul>
+
+            <!-- Navigation columns -->
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Referencje</a></li>
+                <li><a href="#">Serwis</a></li>
+                <li><a href="#">Katalogi</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Monitory chirurgiczne</a></li>
+                <li><a href="#">Detektory</a></li>
+                <li>&nbsp;</li>
+                <li class="fw-bold"><a href="#">Baza wiedzy</a></li>
+                <li><a href="#">Monitory medyczne</a></li>
+                <li><a href="#">Detektory</a></li>
+            </ul>
+            <ul class="footer-nav nav-col">
+                <li><a href="#">Polityka prywatności</a></li>
+                <li><a href="#">Rodo</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="public/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

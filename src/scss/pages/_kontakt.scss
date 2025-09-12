@@ -113,6 +113,14 @@
     margin-top: 5rem;
     padding-top: 0;
   }
+  // 4) Inputs & textarea
+  .form-control {
+    border-radius: $input-border-radius;
+    &.form-control-lg {
+      padding: 0 .25rem;
+      background: #fff;
+    }
+  }
 
   // Disclaimer styling
   .disclaimer {

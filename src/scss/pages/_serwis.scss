@@ -1,0 +1,117 @@
+// src/scss/pages/_serwis.scss
+
+// 1) Hero
+.serwis-hero {
+  position: relative;
+  background: url('../img/serwis-hero.jpg') center/cover no-repeat;
+  min-height: 50vh;
+  display: flex;
+  align-items: center; // vertical center content
+
+  &__overlay {
+    position: absolute; inset: 0;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  .badge {
+    font-size: 0.75rem;
+  }
+
+  h1 {
+    font-size: 2.5rem; font-weight: 700;
+    @media (min-width: $break-md) { font-size: 3.5rem; }
+  }
+
+  &__lead {
+    color: rgba(255,255,255,0.85);
+    max-width: 600px;
+    font-size: 1rem;
+    @media (min-width: $break-md) { font-size: 1.125rem; }
+  }
+}
+
+// 2) Form wrapper
+.serwis-form {
+  background: $body-bg;
+  padding-top: 3rem;
+  h2 {
+    font-size: 2rem; font-weight: 700;
+  }
+}
+
+// 3) Section headings + labels
+.serwis-form h5 {
+  font-size: 1.25rem; font-weight: 600;
+}
+.serwis-form .form-label.small {
+  font-weight: 600;
+}
+
+// 4) Inputs & textarea
+.serwis-form .form-control {
+  border-radius: $input-border-radius;
+  &.form-control-lg {
+    padding: 0.75rem 1rem;
+    background: #fff;
+  }
+}
+
+// 5) Radio buttons
+.serwis-form .form-check-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2rem;
+}
+.serwis-form .form-check-label {
+  margin-left: 0.5rem;
+  font-size: 0.95rem;
+}
+
+// 6) Drop area
+.serwis-droparea {
+  border: 1px dashed rgba($secondary,0.4);
+  border-radius: $input-border-radius;
+  img { width: 2rem; }
+  p { color: $secondary; font-size: 0.9rem; }
+}
+
+// 7) Disclaimers
+.serwis-form .disclaimer {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0;
+
+  input[type="checkbox"] {
+    position: absolute; opacity:0;
+  }
+
+  &__icon {
+    width: 1.25rem; height: 1.25rem;
+    margin-top: 0.25rem;
+    background: $danger; border-radius: 50%;
+    background-size: 0.6rem; background-position: center;
+    background-repeat: no-repeat;
+  }
+  input:checked + &__icon {
+    background-image: url('public/icons/check.svg');
+  }
+}
+
+// 8) Submit button
+.serwis-form button[type="submit"] {
+  border-radius: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+// 9) Responsive tweaks
+@media (min-width: $break-lg) {
+  .serwis-form {
+    padding-top: 4rem;
+    .disclaimer { margin-right: 2rem; }
+  }
+  .serwis-form button[type="submit"] {
+    margin-top: 0;
+  }
+}
