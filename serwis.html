@@ -187,30 +187,32 @@
                 <p class="mb-0">Kliknij lub przesuń pliki na ten obszar<br> Maksymalna liczba plików wynosi 5.
                 </p>
             </div>
+            <!-- helper line -->
+            <small class="form-text text-secondary px-3 mt-2">
+                Prosimy nie archiwizować plików, mogą zostać odrzucone. Dostępne akceptowalne formaty zdjęć to JPEG, PNG i PDF. Maksymalny rozmiar załączników to 20 MB.
+            </small>
         </div>
 
-        <!-- Disclaimers + Submit -->
-        <div class="col-12 d-flex flex-column flex-lg-row align-items-start justify-content-between">
-            <label class="d-flex align-items-start mb-3 disclaimer">
-                <!-- 1) input first -->
-                <input type="checkbox" class="visually-hidden" />
-                <!-- 2) icon span -->
-                <span class="disclaimer__icon me-2"></span>
-                <!-- 3) text -->
-                <span class="small text-secondary">
-                                  inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsum…
-                </span>
-            </label>
-            <label class="d-flex align-items-start mb-3 disclaimer">
-                <!-- 1) input first -->
-                <input type="checkbox" class="visually-hidden" />
-                <!-- 2) icon span -->
-                <span class="disclaimer__icon me-2"></span>
-                <!-- 3) text -->
-                <span class="small text-secondary">
-                                  inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsum…
-                </span>
-            </label>
+        <div class="col-12 mb-4">
+            <!-- wrap all disclaimers in a flex-column -->
+            <div class="d-flex flex-column px-3">
+                <label class="disclaimer d-flex align-items-start mb-3">
+                    <input type="checkbox" class="visually-hidden" />
+                    <span class="disclaimer__icon me-2"></span>
+                    <span class="small text-secondary">
+        inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsum…
+      </span>
+                </label>
+                <label class="disclaimer d-flex align-items-start mb-3">
+                    <input type="checkbox" class="visually-hidden" />
+                    <span class="disclaimer__icon me-2"></span>
+                    <span class="small text-secondary">
+        inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsum…
+      </span>
+                </label>
+            </div>
+        </div>
+        <div class="d-flex flex-column mt-0 px-3 px-lg-0 align-items-end mb-3">
             <!-- Submit button (now always below) -->
             <button type="submit" class="btn btn-danger d-flex">
                 Wyślij zgłoszenie

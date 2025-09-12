@@ -56,6 +56,12 @@
   }
 }
 
+.serwis-form input[type="radio"] {
+  accent-color: $danger;
+  --bs-form-check-color: $danger;
+
+}
+
 // 5) Radio buttons
 .serwis-form .form-check-input {
   width: 1.25rem;
@@ -87,14 +93,31 @@
   }
 
   &__icon {
-    width: 1.25rem; height: 1.25rem;
-    margin-top: 0.25rem;
-    background: $danger; border-radius: 50%;
-    background-size: 0.6rem; background-position: center;
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.25rem;       // nudge it to match text top
+    background-color: $danger;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-size: 0.6rem 0.6rem;
     background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image .2s;
   }
+
+  input + &__icon {
+    background-image: url('public/icons/check.svg');
+  }
+  // when checked, show white check
   input:checked + &__icon {
     background-image: url('public/icons/check.svg');
+  }
+
+  &__text {
+    line-height: 1.4;
+    font-size: .75rem;
+    font-weight: 600;
+    color: $font-color-secondary;
   }
 }
 

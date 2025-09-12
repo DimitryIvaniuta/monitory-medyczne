@@ -2436,10 +2436,10 @@ textarea.form-control-lg {
   border-color: #0A7DB8;
 }
 .form-check-input:checked[type=checkbox] {
-  --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+  --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23E21E26' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 }
 .form-check-input:checked[type=radio] {
-  --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+  --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23E21E26'/%3e%3c/svg%3e");
 }
 .form-check-input[type=checkbox]:indeterminate {
   background-color: #0A7DB8;
@@ -13067,6 +13067,11 @@ input:checked + .kontakt-form .disclaimer__icon {
   background: #fff;
 }
 
+.serwis-form input[type=radio] {
+  accent-color: #E11D48;
+  --bs-form-check-color: $danger;
+}
+
 .serwis-form .form-check-input {
   width: 1.25rem;
   height: 1.25rem;
@@ -13101,17 +13106,28 @@ input:checked + .kontakt-form .disclaimer__icon {
   opacity: 0;
 }
 .serwis-form .disclaimer__icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
   margin-top: 0.25rem;
-  background: #E11D48;
+  background-color: #E11D48;
   border-radius: 50%;
-  background-size: 0.6rem;
-  background-position: center;
+  flex-shrink: 0;
+  background-size: 0.6rem 0.6rem;
   background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.2s;
+}
+input + .serwis-form .disclaimer__icon {
+  background-image: url("public/icons/check.svg");
 }
 input:checked + .serwis-form .disclaimer__icon {
   background-image: url("public/icons/check.svg");
+}
+.serwis-form .disclaimer__text {
+  line-height: 1.4;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #898682;
 }
 
 .serwis-form button[type=submit] {
