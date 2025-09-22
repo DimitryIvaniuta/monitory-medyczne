@@ -13,7 +13,7 @@
   // Logo sizing
   .navbar-logo {
     height: 2.5rem;
-    @media (min-width: 992px) { height: 3rem; }
+    @media (min-width: 992px) { height: 3.5rem; }
   }
 
   // Nav links
@@ -33,7 +33,7 @@
         bottom: -21px;
         height: 5px;
         background: $danger;
-        @media (min-width: 992px) { bottom: -26px; }
+        @media (min-width: 992px) { bottom: -29px; }
       }
     }
 

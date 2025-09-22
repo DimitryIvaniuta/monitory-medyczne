@@ -5,37 +5,39 @@
 // 1) Hero / Welcome section
 .hero-section {
   position: relative;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   background: url('../img/hero-bg.png') center/cover no-repeat;
 
   .overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   .hero-content {
     position: absolute;
     z-index: 1;
     color: #fff;
-    padding: 2rem 1rem;
-    top: 12%;      // pulls it up (adjust % as needed)
-    left: 15%;     // shifts it left (adjust % as needed)
-    max-width: 40%; // limit width so text wraps nicely
+    padding: 0;
+    top: 10%;      // pulls it up (adjust % as needed)
+    left: 19%;     // shifts it left (adjust % as needed)
+    max-width: 31%; // limit width so text wraps nicely
 
     h1 {
       font-size: 2.5rem;
-      @media (min-width: $break-md) { font-size: 3rem; }
-      @media (min-width: $break-lg) { font-size: 3.75rem; }
-      font-weight: 700;
+      @media (min-width: $break-md) { font-size: 2.7rem; }
+      @media (min-width: $break-lg) { font-size: 3rem; }
+      //font-weight: 200;
       line-height: 1.2;
-      margin-bottom: 1rem;
+      margin: .5rem 0 1.2rem 0;
     }
 
     p.lead {
-      font-size: 1.125rem;
-      @media (min-width: $break-md) { font-size: 1.25rem; }
+      font-size: 1rem;
+      font-weight: 400;
+      color: $gray-400;
+      @media (min-width: $break-md) { font-size: 1rem; }
       margin-bottom: 2rem;
     }
 
