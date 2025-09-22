@@ -12029,39 +12029,83 @@ label {
 
 .navbar {
   background: #F0ECE4;
+  position: relative;
+  border-bottom: 1px solid rgba(80, 78, 76, 0.1);
+  min-width: 1100px;
 }
 .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl, .navbar .container-xxl {
   padding-left: 100px;
   padding-right: 1rem;
 }
-.navbar {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.navbar .navbar-logo {
+  height: 2.5rem;
 }
-.navbar .btn {
-  white-space: nowrap;
-}
-.navbar {
-  border-bottom: 1px solid rgba(80, 78, 76, 0.1);
-}
-.navbar .navbar-brand img {
-  height: 2rem;
+@media (min-width: 992px) {
+  .navbar .navbar-logo {
+    height: 3rem;
+  }
 }
 .navbar .nav-link {
-  color: #212529;
+  font-size: 1rem;
   font-weight: 500;
+  color: #212529;
+  padding: 0.5rem 1rem;
+  position: relative;
 }
-.navbar .nav-link:hover, .navbar .nav-link.active {
+.navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -21px;
+  height: 5px;
+  background: #E11D48;
+}
+@media (min-width: 992px) {
+  .navbar .nav-link.active::after {
+    bottom: -26px;
+  }
+}
+.navbar .nav-link:hover {
   color: #0A7DB8;
 }
-.navbar .btn-outline-primary {
+.navbar .contact-btn {
   white-space: nowrap;
-  border-color: #0A7DB8;
+  font-size: 0.95rem;
+  color: #212529;
+}
+.navbar .contact-btn .contact-icon {
+  width: 1.25rem;
+  height: auto;
+}
+@media (min-width: 576px) {
+  .navbar .contact-btn .contact-text {
+    font-size: 1rem;
+  }
+}
+.navbar .contact-btn:hover {
   color: #0A7DB8;
 }
-.navbar .btn-outline-primary:hover {
-  background: #0A7DB8;
+.navbar .contact-btn:hover .contact-icon {
+  filter: brightness(0) saturate(100%) invert(28%) sepia(78%) saturate(588%) hue-rotate(337deg) brightness(95%) contrast(94%);
+}
+.navbar .language-pill {
+  width: 2rem;
+  height: 2rem;
+  background: #E11D48;
   color: #fff;
+  font-size: 0.875rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .navbar .language-pill {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
 }
 
 .site-footer {

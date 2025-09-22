@@ -1,31 +1,78 @@
 // Navbar
 .navbar {
   background: $body-bg;
-  // push entire contents 100px from the left edge
+  position: relative;
+  border-bottom: 1px solid rgba($secondary, .1);
+  min-width: 1100px;
+
   .container-fluid {
     padding-left: 100px;
-    padding-right: 1rem;    // keep normal right gutter
+    padding-right: 1rem;
   }
 
-  // increase vertical clickable area
-  padding-top:    1rem;
-  padding-bottom: 1rem;
-
-  .btn {
-    white-space: nowrap;
+  // Logo sizing
+  .navbar-logo {
+    height: 2.5rem;
+    @media (min-width: 992px) { height: 3rem; }
   }
 
-  border-bottom: 1px solid rgba($secondary, .1);
-  .navbar-brand img { height: 2rem; }
+  // Nav links
   .nav-link {
-    color: $body-color;
+    font-size: 1rem;
     font-weight: 500;
-    &:hover, &.active { color: $primary; }
+    color: $body-color;
+    padding: .5rem 1rem;
+    position: relative;
+
+    &.active {
+      //color: $primary;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        bottom: -21px;
+        height: 5px;
+        background: $danger;
+        @media (min-width: 992px) { bottom: -26px; }
+      }
+    }
+
+    &:hover { color: $primary; }
   }
-  .btn-outline-primary {
+
+  // Contact button
+  .contact-btn {
     white-space: nowrap;
-    border-color: $primary;
-    color: $primary;
-    &:hover { background: $primary; color: #fff; }
+    font-size: .95rem;
+    color: $body-color;
+
+    .contact-icon {
+      width: 1.25rem; height: auto;
+    }
+
+    .contact-text {
+      @media (min-width: 576px) { font-size: 1rem; }
+    }
+
+    &:hover {
+      color: $primary;
+      .contact-icon { filter: brightness(0) saturate(100%) invert(28%) sepia(78%) saturate(588%) hue-rotate(337deg) brightness(95%) contrast(94%); }
+    }
+  }
+
+  // Language pill
+  .language-pill {
+    width: 2rem; height: 2rem;
+    background: $danger;
+    color: #fff;
+    font-size: .875rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: 992px) {
+      width: 2.5rem; height: 2.5rem;
+      font-size: 1rem;
+    }
   }
 }
